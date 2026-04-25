@@ -1,0 +1,204 @@
+{
+  "newsBar": "Postanite dio NOMAD radne zajednice u Trebinju",
+  "toolbarLinks": [
+    { "href": "#o-nama", "label": "O nama" },
+    { "href": "#radni-prostor", "label": "Radni prostor" },
+    { "href": "#clanstvo", "label": "Članstvo" },
+    { "href": "#galerija", "label": "Galerija" },
+    { "href": "#faq", "label": "FAQ" },
+    { "href": "#kontakt", "label": "Kontakt" }
+  ],
+  "reservationBtn": "Rezervacija",
+  "learnMoreBtn": "VIŠE O NAMA",
+  "menuButtonLabel": "Otvori meni",
+  "toolbarNavAriaLabel": "Glavna navigacija",
+  "languageSelectAriaLabel": "Izaberite jezik",
+  "exploreSpace": "ISTRAŽI PROSTOR",
+  "heroImageAlt": "NOMAD coworking prostor",
+  "heroTitle": "COWORKING SPACE U TREBINJU.",
+  "heroSubtitle": "PROSTOR GDJE IDEJE RADE, A LJUDI SE POVEZUJU.",
+  "heroSupportText": "NOMAD je coworking prostor u Trebinju osmišljen za freelancere, preduzetnike i remote profesionalce koji traže mir za rad, ali i zajednicu ljudi sa sličnim ambicijama.\nOvdje ne dolazite samo da radite — već da pripadate.",
+  "values": [
+    {
+      "title": "MIR I FOKUS",
+      "description": "Prostor za rad bez buke, pritiska i distrakcija."
+    },
+    {
+      "title": "UGODAN AMBIJENT",
+      "description": "Topao, prirodan prostor u kojem je prijatno provoditi sate."
+    },
+    {
+      "title": "ZAJEDNICA LJUDI",
+      "description": "Mjesto gdje se ljudi povezuju, sarađuju i rastu."
+    }
+  ],
+  "storyTitle": "ZAŠTO NOMAD?",
+  "storyParagraphs": [
+    "Rad od kuće često znači kompromis. Kompromis između fokusa i udobnosti, između posla i privatnog života, između produktivnosti i mira.",
+    "NOMAD je nastao kao odgovor na to. Ovdje je svaki detalj podređen radu — svjetlo, tišina, raspored, ambijent. Prostor koji ti pomaže da ostaneš koncentrisan, organizovan i mentalno prisutan u onome što radiš.",
+    "Bez kućnih distrakcija. Bez osjećaja improvizacije. Bez gubljenja ritma.",
+    "Jer ponekad nije problem u poslu — već u prostoru u kojem ga radiš."
+  ],
+  "storyImageAlt": "Atmosfera NOMAD prostora",
+  "featuresTitle": "PROSTOR KOJI POŠTUJE VAŠ RAD",
+  "features": [
+    {
+      "title": "WIFI BRZA INTERNET KONEKCIJA",
+      "description": "Stabilna i pouzdana veza prilagođena profesionalnom radu i video pozivima."
+    },
+    {
+      "title": "RADNA MJESTA SA PRIVATNIM ORMARIĆIMA",
+      "description": "Svako radno mjesto dolazi sa privatnim, zaključanim ormariće za sigurnost i organizaciju."
+    },
+    {
+      "title": "PRIVATNI ZOOM ROOM",
+      "description": "Posebno izdvojena, tiha govornica za online sastanke i razgovore bez ometanja."
+    },
+    {
+      "title": "KONFERENCIJSKI STO",
+      "description": "Prostor za sastanke, prezentacije i timski rad u mirnom i profesionalnom okruženju."
+    },
+    {
+      "title": "KANCELARIJSKA OPREMA",
+      "description": "Sve osnovne kancelarijske potrebe dostupne bez dodatnih komplikacija."
+    },
+    {
+      "title": "KAFA I TOPLI NAPICI",
+      "description": "Kafa i topli napici za male rituale koji čine rad ugodnijim."
+    },
+    {
+      "title": "PRIVATNI PARKING",
+      "description": "Jednostavan dolazak i bezbrižno parkiranje u neposrednoj blizini prostora."
+    },
+    {
+      "title": "FLEKSIBILNO RADNO VRIJEME",
+      "description": "Otvoreni i tokom vikenda, za rad u skladu sa vašim ritmom."
+    },
+    {
+      "title": "RAD UZ PRIRODU",
+      "description": "Pogled na rijeku, prirodno svjetlo i mogućnost rada na otvorenom prostoru stvaraju ambijent koji umiruje, ali istovremeno inspiriše.\nOvdje rad ne znači zatvorenost između četiri zida, već slobodu da promijenite perspektivu, udahnete i nastavite sa novom energijom.\n\nRad uz prirodu u NOMAD-u nije dodatak — to je dio iskustva."
+    }
+  ],
+  "immersiveTitle": "ISTRAŽITE NAŠ RADNI PROSTOR",
+  "immersiveDescription": "NOMAD je osmišljen kao sklad različitih zona, prilagođenih različitim načinima rada. Svaki prostor ima svoju svrhu, ali svi dijele isti mir, eleganciju i osjećaj fokusa.",
+  "immersiveImageAlt": "Radni prostor NOMAD",
+  "membershipSectionTitle": "ČLANSTVO U NOMAD",
+  "memberships": [
+    {
+      "eyebrow": "Mjesečno članstvo",
+      "title": "NOMAD MEMBER",
+      "price": "256 KM / MJESEČNO",
+      "strike": "320",
+      "description": "Najisplativiji način da NOMAD postane dio vaše svakodnevice, dostupno u dnevnom terminu od 07:00 do 16:30.",
+      "items": [
+        "Brza i stabilna internet konekcija",
+        "Lično radno mjesto sa privatnim, zaključanim ormariće",
+        "Privatni zoom room za pozive i sastanke",
+        "Konferencijski sto za 4 osobe",
+        "Kancelarijska oprema, kafa i topli napici",
+        "Privatni parking i rad uz prirodu"
+      ],
+      "featured": true
+    },
+    {
+      "eyebrow": "Dnevni pristup",
+      "title": "NOMAD DAY",
+      "price": "32 KM / DAN",
+      "strike": "40",
+      "description": "Savršen izbor za povremeni rad ili upoznavanje prostora, dostupno u dnevnom terminu od 07:00 do 16:30.",
+      "items": [
+        "Internet konekcija i radno mjesto",
+        "Privatni ormarić i zoom room",
+        "Konferencijski sto za 4 osobe",
+        "Kafa, topli napici i parking"
+      ]
+    },
+    {
+      "eyebrow": "Timski pristup",
+      "title": "NOMAD TEAM",
+      "price": "40 KM / PO SATU",
+      "strike": "50",
+      "description": "Idealan izbor za sastanke, edukacije, prezentacije i timski rad, dostupno u večernjem terminu od 17:00 do 22:00.",
+      "items": [
+        "Konferencijski sto za 14 osoba",
+        "Interaktivni panel i zoom room",
+        "Kancelarijska oprema i topli napici",
+        "Privatni parking"
+      ]
+    },
+    {
+      "eyebrow": "Mjesečno članstvo",
+      "title": "NOMAD BUSINESS",
+      "price": "320 KM / MJESEČNO",
+      "strike": "400",
+      "description": "Idealno rješenje za firme kojima je potrebna registrovana poslovna adresa i osnovna poslovna infrastruktura.",
+      "items": [
+        "Poslovna adresa i sjedište firme",
+        "Poštansko sanduće i prijem pošte",
+        "Upravljanje poštom i obavještavanje",
+        "Istaknut naziv ili logo firme unutar prostora",
+        "Podrška za sastanke i administraciju"
+      ]
+    }
+  ],
+  "selectPackageBtn": "IZABERITE PAKET",
+  "galleryTitle": "GALERIJA",
+  "galleryImageAlt": "Galerija prostora",
+  "galleryPrevLabel": "Lijevo",
+  "galleryNextLabel": "Desno",
+  "faqSectionTitle": "FAQ",
+  "faqs": [
+    {
+      "question": "Da li je potrebna rezervacija?",
+      "answer": "Da. Rezervacija je obavezna za sve pakete i vrši se putem online forme na sajtu."
+    },
+    {
+      "question": "Koja je razlika između dnevnog i mjesečnog članstva?",
+      "answer": "Dnevni pristup je za povremeni boravak, dok mjesečno članstvo podrazumijeva svakodnevni ritam rada i povoljniju cijenu na duži period."
+    },
+    {
+      "question": "Koje je radno vrijeme?",
+      "answer": "Dnevni termini su od 07:00 do 16:30, a timski večernji termin od 17:00 do 22:00."
+    },
+    {
+      "question": "Da li imam lično radno mjesto?",
+      "answer": "Da. Paketi su osmišljeni tako da dobijete jasno definisano mjesto za rad i sigurno odlaganje stvari."
+    },
+    {
+      "question": "Da li mogu koristiti prostor za sastanke i prezentacije?",
+      "answer": "Da. Konferencijski sto i izdvojene zone dostupni su prema odabranom paketu i dogovoru."
+    },
+    {
+      "question": "Šta je uključeno u cijenu?",
+      "answer": "Zavisno od paketa, cijena uključuje internet, radno mjesto, opremu, napitke, parking i pristup dodatnim prostorima."
+    },
+    {
+      "question": "Da li nudite rješenja za kompanije?",
+      "answer": "Da. NOMAD Business uključuje registrovanu poslovnu adresu, upravljanje poštom i osnovnu infrastrukturu bez potrebe za stalnim kancelarijskim prostorom."
+    }
+  ],
+  "contactSectionTitle": "JAVITE NAM SE",
+  "contactIntro": "Imate pitanje ili želite rezervisati radni prostor? Pošaljite nam poruku putem kontakt forme ili nas kontaktirajte direktno na +387 66 636 703 i +387 65 171 117.",
+  "contactForm": {
+    "namePlaceholder": "Ime i prezime",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Telefon",
+    "subjectPlaceholder": "Tema poruke",
+    "messagePlaceholder": "Poruka",
+    "captchaPlaceholder": "Captcha",
+    "submitBtn": "POŠALJITE PORUKU"
+  },
+  "contactImageAlt": "Detalj NOMAD prostora",
+  "footerBrand": "NOMAD",
+  "footerDescription": "Coworking space u Trebinju. Prostor gdje ideje rade, a ljudi se povezuju.",
+  "footerTeamTitle": "DIREKTNA PODRŠKA TIMA",
+  "footerTeamText": "Kontaktirajte nas putem kontakt forme ili putem telefona: +387 66 636 703, +387 65 171 117.",
+  "footerAddressTitle": "NASA ADRESA",
+  "footerAddress": "Obala Mica Ljubibratića, Trebinje",
+  "footerNavigationTitle": "NAVIGACIJA",
+  "footerPackagesTitle": "PAKETI",
+  "footerInfoTitle": "INFORMACIJE",
+  "footerNavigation": ["O nama", "Radni prostor", "Članstvo", "Galerija", "FAQ", "Kontakt"],
+  "footerPackages": ["NOMAD Member", "NOMAD Day", "NOMAD Team", "NOMAD Business"],
+  "footerInfo": ["Radno vrijeme", "Pravila korištenja", "Politika privatnosti", "Uslovi korištenja"]
+}

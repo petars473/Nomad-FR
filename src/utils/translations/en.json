@@ -1,0 +1,213 @@
+{
+  "newsBar": "BECOME PART OF THE NOMAD COWORKING COMMUNITY IN TREBINJE",
+  "toolbarLinks": [
+    { "href": "#o-nama", "label": "About" },
+    { "href": "#radni-prostor", "label": "Workspace" },
+    { "href": "#clanstvo", "label": "Membership" },
+    { "href": "#galerija", "label": "Gallery" },
+    { "href": "#faq", "label": "FAQ" },
+    { "href": "#kontakt", "label": "Contact" }
+  ],
+  "reservationBtn": "RESERVATION",
+  "learnMoreBtn": "LEARN MORE",
+  "menuButtonLabel": "Open menu",
+  "toolbarNavAriaLabel": "Main navigation",
+  "languageSelectAriaLabel": "Select language",
+  "exploreSpace": "EXPLORE SPACE",
+  "heroImageAlt": "NOMAD coworking space",
+  "heroTitle": "COWORKING SPACE IN TREBINJE.",
+  "heroSubtitle": "A PLACE WHERE IDEAS GROW AND PEOPLE CONNECT.",
+  "heroSupportText": "NOMAD is a coworking space in Trebinje designed for freelancers, entrepreneurs, and remote professionals who value focus, calm, and a sense of community.\nIt's not just a place to work — it's a place to belong.",
+  "values": [
+    {
+      "title": "CALM & FOCUS",
+      "description": "A workspace free from noise, pressure, and distractions."
+    },
+    {
+      "title": "COMFORTABLE ENVIRONMENT",
+      "description": "A warm, natural space designed for long, focused work sessions."
+    },
+    {
+      "title": "COMMUNITY",
+      "description": "A place where people connect, collaborate, and grow."
+    }
+  ],
+  "storyTitle": "WHY NOMAD?",
+  "storyParagraphs": [
+    "Working from home often means compromise. A compromise between focus and comfort, between work and personal life, between productivity and peace.",
+    "NOMAD was created to change that. Every detail is designed for focus — light, silence, layout, atmosphere. A space that helps you stay clear, organized, and fully present in your work.",
+    "No distractions. No improvisation. No lost rhythm.",
+    "Because sometimes the problem isn't the work — it's the space you work in."
+  ],
+  "storyImageAlt": "NOMAD space atmosphere",
+  "featuresTitle": "A SPACE THAT RESPECTS YOUR WORK",
+  "features": [
+    {
+      "title": "WIFI — HIGH-SPEED INTERNET",
+      "description": "A stable and reliable connection designed for professional work and video calls."
+    },
+    {
+      "title": "WORKSTATIONS WITH PRIVATE LOCKERS",
+      "description": "A dedicated workstation with a private, lockable locker for security and organisation."
+    },
+    {
+      "title": "PRIVATE ZOOM ROOM",
+      "description": "A quiet, dedicated space for online meetings and calls without interruptions."
+    },
+    {
+      "title": "CONFERENCE TABLE",
+      "description": "A space designed for meetings, presentations, and team collaboration in a calm, professional setting."
+    },
+    {
+      "title": "OFFICE ESSENTIALS",
+      "description": "All basic office supplies available without complications."
+    },
+    {
+      "title": "COFFEE & HOT DRINKS",
+      "description": "Coffee and hot drinks for the small rituals that make work more enjoyable."
+    },
+    {
+      "title": "PRIVATE PARKING",
+      "description": "Easy access and hassle-free parking in the immediate vicinity."
+    },
+    {
+      "title": "FLEXIBLE WORKING HOURS",
+      "description": "Open including weekends, for work on your own schedule."
+    },
+    {
+      "title": "WORKING IN NATURE",
+      "description": "Views of the river, natural light, and the option to work outdoors create an environment that feels calm, yet inspiring.\nHere, work doesn’t mean being confined between four walls — it means having the freedom to shift your perspective, take a breath, and continue with renewed energy.\n\nAt NOMAD, working in nature isn’t an extra — it’s part of the experience."
+    }
+  ],
+  "immersiveTitle": "EXPLORE OUR WORKSPACE",
+  "immersiveDescription": "NOMAD is designed as a balance of different zones, each tailored to a unique way of working. Every space has its own purpose, yet all share the same sense of calm, elegance, and focus.",
+  "immersiveImageAlt": "NOMAD workspace",
+  "membershipSectionTitle": "MEMBERSHIP AT NOMAD",
+  "memberships": [
+    {
+      "eyebrow": "Monthly membership",
+      "title": "NOMAD MEMBER",
+      "price": "256 KM / MONTH",
+      "strike": "320",
+      "description": "The most convenient way to make NOMAD part of your daily routine, available during daytime hours from 07:00 to 16:30.",
+      "items": [
+        "High-speed, reliable internet",
+        "A dedicated workstation with a private, lockable locker",
+        "Access to a private zoom room for meetings and calls",
+        "Use of a conference table for up to 4 people",
+        "Office essentials",
+        "Coffee and hot drinks",
+        "Private parking",
+        "A natural work setting with river views and the option to work outdoors"
+      ],
+      "featured": true
+    },
+    {
+      "eyebrow": "Daily access",
+      "title": "NOMAD DAY",
+      "price": "32 KM / DAY",
+      "strike": "40",
+      "description": "A perfect choice for occasional work or getting to know the space, available during daytime hours from 07:00 to 16:30.",
+      "items": [
+        "High-speed, reliable internet",
+        "A dedicated workstation with a private, lockable locker",
+        "Access to a private zoom room for meetings and calls",
+        "Use of a conference table for up to 4 people",
+        "Office essentials",
+        "Coffee and hot drinks",
+        "Private parking"
+      ]
+    },
+    {
+      "eyebrow": "Team access",
+      "title": "NOMAD TEAM",
+      "price": "40 KM / HOUR",
+      "strike": "50",
+      "description": "An ideal choice for meetings, workshops, presentations, and team collaboration, available during evening hours from 17:00 to 22:00.",
+      "items": [
+        "High-speed, reliable internet",
+        "Use of a conference table for up to 14 people",
+        "Access to an interactive display",
+        "Access to a private zoom room for meetings and calls",
+        "Office essentials",
+        "Coffee and hot drinks",
+        "Private parking"
+      ]
+    },
+    {
+      "eyebrow": "Monthly membership",
+      "title": "NOMAD BUSINESS",
+      "price": "320 KM / MONTH",
+      "strike": "400",
+      "description": "An ideal solution for companies that need a registered business address, mail handling, and essential business infrastructure — without the need for a permanent office space.",
+      "items": [
+        "A registered business address and company seat for LLC registration",
+        "A dedicated mailbox and receipt of business correspondence",
+        "Mail management and notifications about incoming documents",
+        "Your company name or logo displayed within the NOMAD space",
+        "Access to a conference table for meetings and presentations (upon request)",
+        "Professional bookkeeping and administrative support"
+      ]
+    }
+  ],
+  "selectPackageBtn": "CHOOSE A PACKAGE",
+  "galleryTitle": "GALLERY",
+  "galleryImageAlt": "Workspace gallery",
+  "galleryPrevLabel": "Left",
+  "galleryNextLabel": "Right",
+  "faqSectionTitle": "FAQ",
+  "faqs": [
+    {
+      "question": "Is a reservation required?",
+      "answer": "Yes. A reservation is required for all packages and is made through the online form on the website."
+    },
+    {
+      "question": "What is the difference between daily access and monthly membership?",
+      "answer": "Daily access is for occasional use, while monthly membership is designed for a regular daily work routine and offers better value over time."
+    },
+    {
+      "question": "What are the working hours?",
+      "answer": "Daytime hours run from 07:00 to 16:30, and the team evening slot from 17:00 to 22:00."
+    },
+    {
+      "question": "Do I have a dedicated workspace?",
+      "answer": "Yes. Each package gives you a clearly defined workspace and secure personal storage."
+    },
+    {
+      "question": "Can I use the space for meetings and presentations?",
+      "answer": "Yes. The conference table and dedicated zones are available according to your selected package."
+    },
+    {
+      "question": "What's included in the price?",
+      "answer": "Depending on your package, the price includes internet, a workstation, equipment, drinks, parking, and access to additional areas."
+    },
+    {
+      "question": "Do you offer solutions for companies?",
+      "answer": "Yes. NOMAD Business provides a registered business address, mail handling, and essential infrastructure — without the need for a permanent office."
+    }
+  ],
+  "contactSectionTitle": "GET IN TOUCH",
+  "contactIntro": "Have a question or want to book a workspace?\n\nSend us a message through the contact form or reach out directly:\n\n+387 66 636 703 · +387 65 171 117",
+  "contactForm": {
+    "namePlaceholder": "Full name",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Phone",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Message",
+    "captchaPlaceholder": "Captcha",
+    "submitBtn": "SEND MESSAGE"
+  },
+  "contactImageAlt": "NOMAD space detail",
+  "footerBrand": "NOMAD",
+  "footerDescription": "Coworking space in Trebinje. Where ideas grow, and people connect.",
+  "footerTeamTitle": "DIRECT TEAM SUPPORT",
+  "footerTeamText": "Get in touch through the contact form or call us directly: +387 66 636 703, +387 65 171 117. Our team responds personally and as quickly as possible.",
+  "footerAddressTitle": "OUR LOCATION",
+  "footerAddress": "Obala Mića Ljubibratića, Trebinje",
+  "footerNavigationTitle": "NAVIGATION",
+  "footerPackagesTitle": "PACKAGES",
+  "footerInfoTitle": "INFORMATION",
+  "footerNavigation": ["About", "Workspace", "Membership", "Gallery", "FAQ", "Contact"],
+  "footerPackages": ["NOMAD Member", "NOMAD Day", "NOMAD Team", "NOMAD Business"],
+  "footerInfo": ["Working hours", "House rules", "Privacy policy", "Terms of use"]
+}
