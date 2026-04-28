@@ -1,5 +1,11 @@
 {
   "newsBar": "BECOME PART OF THE NOMAD COWORKING COMMUNITY IN TREBINJE",
+  "newsBarItems": [
+    "BECOME PART OF THE NOMAD COWORKING COMMUNITY IN TREBINJE",
+    "20% OPENING DISCOUNT",
+    "standard WORKING HOURS: 07:00 - 16:30",
+    "NOMAD TEAM (CONFERENCE TABLE): 17:00 - 22:00"
+  ],
   "toolbarLinks": [
     { "href": "#o-nama", "label": "About" },
     { "href": "#radni-prostor", "label": "Workspace" },
@@ -83,6 +89,8 @@
   "immersiveDescription": "NOMAD is designed as a balance of different zones, each tailored to a unique way of working. Every space has its own purpose, yet all share the same sense of calm, elegance, and focus.",
   "immersiveImageAlt": "NOMAD workspace",
   "membershipSectionTitle": "MEMBERSHIP AT NOMAD",
+  "businessSectionTitle": "NO OFFICE? NO PROBLEM.",
+  "membershipIncludesLabel": "Your membership includes:",
   "memberships": [
     {
       "eyebrow": "Monthly membership",
@@ -201,7 +209,9 @@
   "footerBrand": "NOMAD",
   "footerDescription": "Coworking space in Trebinje. Where ideas grow, and people connect.",
   "footerTeamTitle": "DIRECT TEAM SUPPORT",
-  "footerTeamText": "Get in touch through the contact form or call us directly: +387 66 636 703, +387 65 171 117. Our team responds personally and as quickly as possible.",
+  "footerTeamText": "Get in touch through the contact form or call us directly:",
+  "footerTeamPhones": ["+387 66 636 703", "+387 65 171 117"],
+  "footerTeamResponseText": "Our team replies personally and as quickly as possible.",
   "footerAddressTitle": "OUR LOCATION",
   "footerAddress": "Obala Mića Ljubibratića, Trebinje",
   "footerNavigationTitle": "NAVIGATION",

@@ -1,5 +1,11 @@
 {
   "newsBar": "Postanite dio NOMAD radne zajednice u Trebinju",
+  "newsBarItems": [
+    "Postanite dio NOMAD radne zajednice u Trebinju",
+    "20% POPUSTA POVODOM OTVARANJA",
+    "standardno radno vrijeme: 07:00 - 16:30",
+    "NOMAD TEAM (KONFERENCIJSKI STO): 17:00 - 22:00"
+  ],
   "toolbarLinks": [
     { "href": "#o-nama", "label": "O nama" },
     { "href": "#radni-prostor", "label": "Radni prostor" },
@@ -83,6 +89,8 @@
   "immersiveDescription": "NOMAD je osmišljen kao sklad različitih zona, prilagođenih različitim načinima rada. Svaki prostor ima svoju svrhu, ali svi dijele isti mir, eleganciju i osjećaj fokusa.",
   "immersiveImageAlt": "Radni prostor NOMAD",
   "membershipSectionTitle": "ČLANSTVO U NOMAD",
+  "businessSectionTitle": "FIRMA BEZ UREDA?",
+  "membershipIncludesLabel": "U okviru članstva imate:",
   "memberships": [
     {
       "eyebrow": "Mjesečno članstvo",
@@ -192,7 +200,9 @@
   "footerBrand": "NOMAD",
   "footerDescription": "Coworking space u Trebinju. Prostor gdje ideje rade, a ljudi se povezuju.",
   "footerTeamTitle": "DIREKTNA PODRŠKA TIMA",
-  "footerTeamText": "Kontaktirajte nas putem kontakt forme ili putem telefona: +387 66 636 703, +387 65 171 117.",
+  "footerTeamText": "Kontaktirajte nas putem kontakt forme ili putem telefona:",
+  "footerTeamPhones": ["+387 66 636 703", "+387 65 171 117"],
+  "footerTeamResponseText": "Na vaše poruke odgovara naš tim - lično i u najkraćem roku.",
   "footerAddressTitle": "NASA ADRESA",
   "footerAddress": "Obala Mica Ljubibratića, Trebinje",
   "footerNavigationTitle": "NAVIGACIJA",

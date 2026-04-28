@@ -1,4 +1,5 @@
 .page-shell {
+  --top-chrome-height: 90px;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -14,12 +15,40 @@
   background: #717766;
   color: #f7f4ee;
   text-transform: uppercase;
-  text-align: center;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
   padding: 10px 20px;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  min-height: 40px;
+}
+
+.news-bar-text {
+  display: inline-block;
+  text-align: center;
+  animation: news-bar-enter 420ms ease-out;
+}
+
+@keyframes news-bar-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+    filter: blur(0.5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-bar-text {
+    animation: none;
+  }
 }
 
 .sticky-toolbar {
@@ -29,8 +58,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 14px 20px;
+  gap: 16px;
+  padding: 8px 14px;
   background: #ffffff;
   color: #1f1f1c;
   backdrop-filter: blur(14px);
@@ -45,15 +74,22 @@
   text-decoration: none;
 }
 
+.toolbar-logo {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+}
+
 .toolbar-brand-name {
   font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 0.9;
   letter-spacing: 0.14em;
 }
 
 .toolbar-brand-subtitle {
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -96,8 +132,8 @@
   background: transparent;
   border: 1px solid rgba(31, 31, 28, 0.25);
   color: #1f1f1c;
-  padding: 8px 12px;
-  font-size: 12px;
+  padding: 5px 9px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -108,7 +144,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231f1f1c' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 8px center;
-  padding-right: 28px;
+  padding-right: 22px;
 }
 
 .lang-select:hover {
@@ -142,7 +178,7 @@
 }
 
 .hero-section {
-  min-height: 640px;
+  height: clamp(465px, calc(100svh - var(--top-chrome-height)), 730px);
   color: #f7f4ee;
 }
 
@@ -176,7 +212,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 26px 24px 0;
+  padding: 18px 24px 0;
 }
 
 .brand-mark,
@@ -184,30 +220,18 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-
-.footer-social {
-  display: flex;
-  gap: 16px;
-  margin-top: 12px;
 }
 
-.footer-social a {
-  display: flex;
-  align-items: center;
+.nomad-logo {
+  display: block;
+  width: 168px;
+  max-width: 100%;
+  height: auto;
 }
 
-.footer-social img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+.footer-logo {
+  width: 206px;
   filter: brightness(0) invert(1);
-  opacity: 0.85;
-  transition: opacity 180ms ease;
-}
-
-.footer-social a:hover img {
-  opacity: 1;
-}
 }
 
 .brand-name {
@@ -250,7 +274,7 @@
 }
 
 .hero-copy {
-  padding: 110px 24px 48px;
+  padding: 58px 24px 24px;
 }
 
 .hero-buttons {
@@ -351,7 +375,7 @@
 .scroll-indicator {
   position: relative;
   z-index: 1;
-  padding: 0 24px 28px;
+  padding: 0 24px 12px;
   width: fit-content;
   margin-left: auto;
   font-size: 12px;
@@ -458,11 +482,15 @@
   line-height: 1.2;
 }
 
+.membership-card li {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
 .value-card p,
 .story-copy,
 .feature-card p,
 .immersive-copy p,
-.membership-card li,
 .membership-description,
 .faq-answer,
 .contact-intro,
@@ -485,12 +513,25 @@
 
 .story-section {
   display: grid;
-  gap: 24px;
+  gap: 36px;
+  padding: 72px 24px;
+}
+
+.story-section .section-title {
+  width: min(100%, 1100px);
+  margin-inline: auto;
 }
 
 .story-copy {
   display: grid;
   gap: 18px;
+  width: min(100%, 800px);
+  margin-inline: auto;
+}
+
+.story-copy p {
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .story-image {
@@ -511,8 +552,7 @@
 
 .feature-list,
 .membership-list,
-.faq-list,
-.footer-grid {
+.faq-list {
   display: grid;
   gap: 16px;
 }
@@ -570,7 +610,7 @@
 }
 
 .immersive-section {
-  min-height: 440px;
+  min-height: 835px;
 }
 
 .immersive-section img {
@@ -588,11 +628,12 @@
 }
 
 .immersive-title {
-  font-size: 14px !important;
+  font-size: 32px !important;
   line-height: 1.2;
   max-width: 20ch;
   letter-spacing: 0.02em;
   margin: 0;
+  color: #ffffff;
 }
 
 .immersive-divider {
@@ -606,12 +647,20 @@
   max-width: 52ch;
   padding-top: 2px !important;
   border-top: 0;
+  font-size: 18px !important;
+  color: #ffffff;
 }
 
 .membership-card {
+  position: relative;
   display: grid;
-  gap: 18px;
+  grid-template-rows: auto auto auto auto 1fr auto auto;
+  align-content: start;
+  gap: 12px;
+  padding: 26px 30px 24px;
   background: #f7f4ee;
+  text-align: left;
+  min-height: 760px;
 }
 
 .membership-card.featured {
@@ -620,45 +669,171 @@
   border-color: rgba(247, 244, 238, 0.18);
 }
 
+.membership-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  line-height: 0;
+}
+
+.membership-badge svg {
+  width: 40px;
+  height: 40px;
+}
+
 .membership-eyebrow {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: rgba(31, 31, 28, 0.76);
   margin: 0;
+}
+
+.membership-card.featured .membership-eyebrow {
+  color: rgba(247, 244, 238, 0.8);
+}
+
+.membership-card h3 {
+  text-align: center;
 }
 
 .membership-price {
   display: flex;
   align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(31, 31, 28, 0.45);
   gap: 10px;
-  font-size: 20px;
+  font-size: clamp(30px, 3vw, 36px);
   font-weight: 700;
+  line-height: 1.06;
   margin: 0;
+}
+
+.membership-card.featured .membership-price {
+  border-bottom-color: rgba(247, 244, 238, 0.5);
 }
 
 .membership-strike {
   text-decoration: line-through;
   opacity: 0.6;
-  font-size: 14px;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1;
 }
 
-.membership-card ul,
-.footer-grid ul {
+.membership-includes {
+  margin: 0;
+  font-size: 15px;
+}
+
+.membership-card ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
+  align-content: start;
+  gap: 8px;
 }
 
-.membership-card li::before,
-.footer-grid li::before {
+.membership-card li::before {
   content: '•';
   margin-right: 8px;
 }
 
 .membership-description {
   margin: 0;
+  padding-top: 22px;
+  min-height: 145px;
+}
+
+.membership-card .package-button {
+  margin-top: auto;
+  align-self: end;
+}
+
+/* ── NOMAD BUSINESS section ─────────────────────────────── */
+.business-section {
+  display: grid;
+  gap: 32px;
+  padding-block: 56px;
+}
+
+.business-card {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  padding: 40px 32px 36px;
+  background: #E9E4D8;
+  text-align: center;
+  border: 1px solid rgba(31, 31, 28, 0.18);
+}
+
+.business-card-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  line-height: 0;
+}
+
+.business-eyebrow {
+  text-align: center;
+  padding-left: 56px;
+}
+
+.business-card-title {
+  text-align: center;
+}
+
+.business-price {
+  justify-content: center;
+}
+
+.business-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.business-items li::before {
+  content: '•';
+  margin-right: 8px;
+}
+
+.business-desc {
+  min-height: 0;
+  padding-top: 8px;
+}
+
+.business-btn {
+  justify-self: center;
+  width: 100%;
+  max-width: 280px;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .business-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .business-items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* ── end NOMAD BUSINESS section ─────────────────────────── */
+
+.footer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
 }
 
 .gallery-panel {
@@ -761,17 +936,62 @@
 
 .footer-section {
   display: grid;
-  gap: 28px;
+  gap: 30px;
+  background: #757d6c;
+  color: #f7f4ee;
 }
 
-.footer-block,
-.footer-grid > div {
+.footer-brand,
+.footer-contact,
+.footer-links-block {
   display: grid;
   gap: 12px;
 }
 
-.footer-block h3,
-.footer-grid h3 {
+.footer-brand p,
+.footer-contact p,
+.footer-list li {
+  margin: 0;
+  color: rgba(247, 244, 238, 0.95);
+}
+
+.footer-brand p {
+  max-width: 230px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  opacity: 0.88;
+  transition: opacity 180ms ease;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+}
+
+.footer-social svg {
+  display: block;
+  height: 22px;
+  width: auto;
+}
+
+.footer-contact {
+  max-width: 335px;
+}
+
+.footer-contact h3,
+.footer-links-block h3 {
+  margin: 0;
   font-size: 11px;
   font-family: inherit;
   font-weight: 700;
@@ -779,8 +999,24 @@
   text-transform: uppercase;
 }
 
+.footer-phones {
+  display: grid;
+  gap: 4px;
+  margin: 2px 0;
+}
+
+.footer-phones a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-list {
+  gap: 8px;
+}
+
 @media (min-width: 900px) {
   .page-shell {
+    --top-chrome-height: 120px;
     padding-bottom: 64px;
   }
 
@@ -790,15 +1026,19 @@
   }
 
   .sticky-toolbar {
-    padding: 18px 40px;
+    padding: 12px 26px;
   }
 
   .toolbar-brand-name {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .toolbar-brand-subtitle {
-    font-size: 11px;
+    font-size: 10px;
+  }
+
+  .toolbar-logo {
+    width: 209px;
   }
 
   .toolbar-nav {
@@ -818,12 +1058,12 @@
   }
 
   .lang-select {
-    padding: 8px 28px 8px 12px;
-    font-size: 13px;
+    padding: 6px 22px 6px 9px;
+    font-size: 12px;
   }
 
   .hero-section {
-    min-height: 800px;
+    height: clamp(585px, calc(100svh - var(--top-chrome-height)), 800px);
   }
 
   .topbar {
@@ -849,7 +1089,7 @@
 
   .hero-copy {
     max-width: 760px;
-    padding: 180px 56px 72px;
+    padding: 104px 56px 38px;
   }
 
   .display-title {
@@ -881,7 +1121,7 @@
   .scroll-indicator {
     position: absolute;
     right: 56px;
-    bottom: 34px;
+    bottom: 20px;
     padding: 0;
     margin-left: 0;
   }
@@ -967,7 +1207,7 @@
   }
 
   .immersive-section {
-    min-height: 520px;
+    min-height: 835px;
   }
 
   .immersive-copy {
@@ -997,6 +1237,7 @@
 
   .membership-card {
     min-height: 100%;
+    min-height: 800px;
   }
 
   .gallery-panel {
@@ -1050,24 +1291,28 @@
   }
 
   .footer-section {
-    grid-template-columns: 1.15fr 0.85fr 0.8fr;
+    grid-template-columns: 1.3fr 1.55fr repeat(3, minmax(0, 1fr));
     align-items: start;
+    column-gap: 42px;
+    row-gap: 0;
   }
 
-  .footer-grid {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+  .footer-logo {
+    width: 232px;
+  }
+
+  .footer-list li {
+    line-height: 1.42;
   }
 }
 
 @media (min-width: 1200px) {
   .sticky-toolbar {
-    padding-inline: 56px;
+    padding-inline: 38px;
   }
 
   .hero-copy {
-    padding-top: 210px;
+    padding-top: 128px;
   }
 
   .display-title {
@@ -1092,7 +1337,7 @@
   }
 
   .membership-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 .counter {
