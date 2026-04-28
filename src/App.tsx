@@ -141,12 +141,21 @@ function App() {
         </section>
 
         <section className="immersive-section">
-          <img src={workspaceImage} alt={t.immersiveImageAlt} />
-          <div className="immersive-overlay" />
+          <div className="immersive-media">
+            <img src={workspaceImage} alt={t.immersiveImageAlt} />
+            <div className="immersive-overlay" />
+            <div className="immersive-left-copy">
+              <h2 className="immersive-left-title">{t.immersiveTitle}</h2>
+              <p className="immersive-left-description">{t.immersiveDescription}</p>
+            </div>
+          </div>
           <div className="immersive-copy">
-            <h2 className="immersive-title">{t.immersiveTitle}</h2>
-            <div className="immersive-divider" aria-hidden="true" />
-            <p className="immersive-description">{t.immersiveDescription}</p>
+            <h2 className="immersive-panel-title">{t.openSpaceTitle}</h2>
+            <p className="immersive-panel-capacity">
+              {t.openSpaceCapacityLabel}
+              <span className="immersive-panel-capacity-number">{t.openSpaceCapacityNumber}</span>
+            </p>
+            <p className="immersive-panel-description">{t.openSpaceDescription}</p>
           </div>
         </section>
 

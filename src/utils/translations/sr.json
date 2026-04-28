@@ -86,7 +86,11 @@
     }
   ],
   "immersiveTitle": "ISTRAŽITE NAŠ RADNI PROSTOR",
-  "immersiveDescription": "NOMAD je osmišljen kao sklad različitih zona, prilagođenih različitim načinima rada. Svaki prostor ima svoju svrhu, ali svi dijele isti mir, eleganciju i osjećaj fokusa.",
+  "immersiveDescription": "NOMAD je osmišljen kao sklad različitih zona, prilagođenih različitim načinima rada.\n\nSvaki prostor ima svoju svrhu, ali svi dijele isti mir, eleganciju i osjećaj fokusa.",
+  "openSpaceTitle": "1. OPEN SPACE",
+  "openSpaceCapacityLabel": "Broj radnih mjesta: ",
+  "openSpaceCapacityNumber": "10",
+  "openSpaceDescription": "Otvoreni radni prostor namijenjen svakodnevnom, fokusiranom radu.\n\nProstor je prozračan, miran i pažljivo organizovan kako bi omogućio koncentraciju bez osjećaja gužve.\n\nIdealan za individualni rad, dugotrajne radne sesije i stabilan radni ritam.",
   "immersiveImageAlt": "Radni prostor NOMAD",
   "membershipSectionTitle": "ČLANSTVO U NOMAD",
   "businessSectionTitle": "FIRMA BEZ UREDA?",

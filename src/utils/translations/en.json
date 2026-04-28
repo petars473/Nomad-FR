@@ -86,7 +86,11 @@
     }
   ],
   "immersiveTitle": "EXPLORE OUR WORKSPACE",
-  "immersiveDescription": "NOMAD is designed as a balance of different zones, each tailored to a unique way of working. Every space has its own purpose, yet all share the same sense of calm, elegance, and focus.",
+  "immersiveDescription": "NOMAD is designed as a balance of different zones, each tailored to a unique way of working.\n\nEvery space has its own purpose, yet all share the same sense of calm, elegance, and focus.",
+  "openSpaceTitle": "1. OPEN SPACE",
+  "openSpaceCapacityLabel": "Number of workstations: ",
+  "openSpaceCapacityNumber": "10",
+  "openSpaceDescription": "An open workspace designed for daily, focused work.\n\nThe space is airy, calm, and carefully organized to support concentration without the feeling of crowding.\n\nIdeal for individual work, long sessions, and a stable work rhythm.",
   "immersiveImageAlt": "NOMAD workspace",
   "membershipSectionTitle": "MEMBERSHIP AT NOMAD",
   "businessSectionTitle": "NO OFFICE? NO PROBLEM.",
