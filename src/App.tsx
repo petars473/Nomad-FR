@@ -152,7 +152,7 @@ function App() {
           <div className="immersive-copy">
             <h2 className="immersive-panel-title">{t.openSpaceTitle}</h2>
             <p className="immersive-panel-capacity">
-              {t.openSpaceCapacityLabel}
+              <span className="immersive-panel-capacity-label">{t.openSpaceCapacityLabel}</span>
               <span className="immersive-panel-capacity-number">{t.openSpaceCapacityNumber}</span>
             </p>
             <p className="immersive-panel-description">{t.openSpaceDescription}</p>

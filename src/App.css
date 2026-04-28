@@ -267,8 +267,7 @@
   background: #f7f4ee;
 }
 
-.hero-copy,
-.immersive-copy {
+.hero-copy {
   position: relative;
   z-index: 1;
 }
@@ -296,8 +295,7 @@
 .footer-block h3,
 .footer-grid h3,
 .value-card h2,
-.story-section h2,
-.immersive-title {
+.story-section h2 {
   font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
   font-weight: 400;
   margin: 0;
@@ -476,7 +474,6 @@
 .value-card h2,
 .feature-card h3,
 .membership-card h3,
-.immersive-title,
 .section-title {
   font-size: 26px;
   line-height: 1.2;
@@ -490,7 +487,6 @@
 .value-card p,
 .story-copy,
 .feature-card p,
-.immersive-copy p,
 .membership-description,
 .faq-answer,
 .contact-intro,
@@ -627,6 +623,9 @@
 .immersive-left-copy {
   position: relative;
   z-index: 1;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   color: #ffffff;
   padding: 72px 24px 24px;
 }
@@ -644,6 +643,8 @@
 .immersive-left-title {
   font-size: 30px;
   max-width: 14ch;
+  font-style: normal;
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -654,7 +655,9 @@
   font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
   font-size: 15px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
+  font-synthesis: none;
+  font-optical-sizing: auto;
   line-height: normal;
   white-space: pre-line;
   color: #ffffff;
@@ -663,6 +666,9 @@
 .immersive-copy {
   position: relative;
   z-index: 1;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   background: #717766;
   color: #ffffff;
   padding: 40px 24px;
@@ -680,9 +686,16 @@
   font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
+  font-synthesis: none;
+  font-optical-sizing: auto;
   line-height: normal;
   color: #ffffff;
+}
+
+.immersive-panel-capacity-label {
+  font-size: 18px;
+  line-height: normal;
 }
 
 .immersive-panel-capacity-number {
@@ -698,7 +711,9 @@
   font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
   font-size: 15px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
+  font-synthesis: none;
+  font-optical-sizing: auto;
   line-height: normal;
   white-space: pre-line;
   color: #ffffff;
@@ -1196,7 +1211,6 @@
   .value-card h2,
   .feature-card h3,
   .membership-card h3,
-  .immersive-title,
   .section-title {
     font-size: 42px;
   }
@@ -1295,7 +1309,7 @@
     width: 588px;
     max-width: 100%;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
   }
 
@@ -1307,7 +1321,7 @@
     width: 848px;
     max-width: 100%;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18px;
     line-height: normal;
   }
@@ -1321,7 +1335,7 @@
     max-width: 100%;
     text-align: center;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
   }
 
@@ -1334,14 +1348,7 @@
     width: 195px;
     max-width: 100%;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .immersive-panel-capacity-number {
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
   }
 
@@ -1353,7 +1360,7 @@
     width: 612px;
     max-width: 100%;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18px;
     line-height: normal;
   }
