@@ -620,6 +620,16 @@
   height: 100%;
 }
 
+.immersive-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.immersive-image-first {
+  object-position: 0% center;
+}
+
 .immersive-left-copy {
   position: relative;
   z-index: 1;
@@ -719,8 +729,80 @@
   color: #ffffff;
 }
 
+/* Keep right-panel typography/layout classes identical across slides. */
+.openSpaceTitle-1,
+.openSpaceTitle-2,
+.openSpaceTitle-3,
+.openSpaceTitle-4 {
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.openSpaceCapacity-1,
+.openSpaceCapacity-2,
+.openSpaceCapacity-3,
+.openSpaceCapacity-4 {
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.openSpaceCapacityLabel-1,
+.openSpaceCapacityLabel-2,
+.openSpaceCapacityLabel-3,
+.openSpaceCapacityLabel-4 {
+  font-size: 18px;
+  line-height: normal;
+}
+
+.openSpaceCapacityNumber-1,
+.openSpaceCapacityNumber-2,
+.openSpaceCapacityNumber-3,
+.openSpaceCapacityNumber-4 {
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: normal;
+}
+
+.openSpaceDescription-1,
+.openSpaceDescription-2,
+.openSpaceDescription-3,
+.openSpaceDescription-4 {
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: normal;
+  white-space: pre-line;
+}
+
 .immersive-nav {
   display: none;
+}
+
+.immersive-panel-anim {
+  animation: immersive-panel-enter 380ms ease-out;
+}
+
+@keyframes immersive-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .immersive-panel-anim {
+    animation: none;
+  }
 }
 
 .membership-card {
@@ -1365,6 +1447,49 @@
     max-width: 100%;
     font-style: normal;
     font-weight: 300;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  .openSpaceTitle-1,
+  .openSpaceTitle-2,
+  .openSpaceTitle-3,
+  .openSpaceTitle-4 {
+    position: absolute;
+    left: 174px;
+    top: 301px;
+    width: auto;
+    max-width: none;
+    text-align: center;
+    font-size: 40px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .openSpaceCapacity-1,
+  .openSpaceCapacity-2,
+  .openSpaceCapacity-3,
+  .openSpaceCapacity-4 {
+    position: absolute;
+    left: 174px;
+    top: 375px;
+    width: 195px;
+    max-width: 100%;
+    margin: 0;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  .openSpaceDescription-1,
+  .openSpaceDescription-2,
+  .openSpaceDescription-3,
+  .openSpaceDescription-4 {
+    position: absolute;
+    left: 174px;
+    top: 429px;
+    width: 612px;
+    max-width: 100%;
+    margin: 0;
     font-size: 18px;
     line-height: normal;
   }

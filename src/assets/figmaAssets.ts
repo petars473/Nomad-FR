@@ -1,5 +1,8 @@
 export const heroImage = '/assets/figma/hero.jpg'
 export const workspaceImage = '/assets/figma/workspace.jpg'
+export const workspaceImage2 = '/assets/figma/workspace-2.jpg'
+export const workspaceImage3 = '/assets/figma/workspace-3.jpg'
+export const workspaceImage4 = '/assets/figma/workspace-4.jpg'
 export const galleryImage = '/assets/figma/gallery.jpg'
 export const contactImage = '/assets/figma/contact.jpg'
 

@@ -8,6 +8,9 @@ import {
   heroImage,
   valueIcons,
   workspaceImage,
+  workspaceImage2,
+  workspaceImage3,
+  workspaceImage4,
 } from './assets/figmaAssets'
 
 const MembershipIcon = () => (
@@ -27,7 +30,48 @@ function App() {
   const [openFaq, setOpenFaq] = useState(0)
   const [language, setLanguage] = useState<'sr' | 'en'>('sr')
   const [newsBarIndex, setNewsBarIndex] = useState(0)
+  const [immersivePanelIndex, setImmersivePanelIndex] = useState(0)
   const t = useTranslations(language)
+
+  const immersivePanels = [
+    {
+      image: workspaceImage,
+      leftTitle: t.immersiveTitle,
+      leftDescription: t.immersiveDescription,
+      rightTitle: t.openSpaceTitle,
+      rightCapacityLabel: t.openSpaceCapacityLabel,
+      rightCapacityNumber: t.openSpaceCapacityNumber,
+      rightDescription: t.openSpaceDescription,
+    },
+    {
+      image: workspaceImage2,
+      leftTitle: t.immersiveTitle,
+      leftDescription: t.immersiveDescription,
+      rightTitle: t.openSpaceTitle2,
+      rightCapacityLabel: t.openSpaceCapacityLabel2,
+      rightCapacityNumber: t.openSpaceCapacityNumber2,
+      rightDescription: t.openSpaceDescription2,
+    },
+    {
+      image: workspaceImage3,
+      leftTitle: t.immersiveTitle,
+      leftDescription: t.immersiveDescription,
+      rightTitle: t.openSpaceTitle3,
+      rightCapacityLabel: t.openSpaceCapacityLabel3,
+      rightCapacityNumber: t.openSpaceCapacityNumber3,
+      rightDescription: t.openSpaceDescription3,
+    },
+    {
+      image: workspaceImage4,
+      leftTitle: t.immersiveTitle,
+      leftDescription: t.immersiveDescription,
+      rightTitle: t.openSpaceTitle4,
+      rightCapacityLabel: t.openSpaceCapacityLabel4,
+      rightCapacityNumber: t.openSpaceCapacityNumber4,
+      rightDescription: t.openSpaceDescription4,
+    },
+  ]
+  const currentImmersivePanel = immersivePanels[immersivePanelIndex]
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -141,35 +185,49 @@ function App() {
         </section>
 
         <section className="immersive-section">
-          <div className="immersive-media">
-            <img src={workspaceImage} alt={t.immersiveImageAlt} />
+          <div className="immersive-media immersive-panel-anim" key={`immersive-media-${immersivePanelIndex}`}>
+            <img
+              className={immersivePanelIndex === 0 ? 'immersive-image immersive-image-first' : 'immersive-image'}
+              src={currentImmersivePanel.image}
+              alt={t.immersiveImageAlt}
+            />
             <div className="immersive-overlay" />
             <div className="immersive-left-copy">
-              <h2 className="immersive-left-title">{t.immersiveTitle}</h2>
-              <p className="immersive-left-description">{t.immersiveDescription}</p>
+              <h2 className="immersive-left-title">{currentImmersivePanel.leftTitle}</h2>
+              <p className="immersive-left-description">{currentImmersivePanel.leftDescription}</p>
             </div>
           </div>
-          <div className="immersive-copy">
-            <h2 className="immersive-panel-title">{t.openSpaceTitle}</h2>
-            <p className="immersive-panel-capacity">
-              <span className="immersive-panel-capacity-label">{t.openSpaceCapacityLabel}</span>
-              <span className="immersive-panel-capacity-number">{t.openSpaceCapacityNumber}</span>
+          <div className="immersive-copy immersive-panel-anim" key={`immersive-copy-${immersivePanelIndex}`}>
+            <h2 className={`immersive-panel-title openSpaceTitle-${immersivePanelIndex + 1}`}>{currentImmersivePanel.rightTitle}</h2>
+            <p className={`immersive-panel-capacity openSpaceCapacity-${immersivePanelIndex + 1}`}>
+              <span className={`immersive-panel-capacity-label openSpaceCapacityLabel-${immersivePanelIndex + 1}`}>{currentImmersivePanel.rightCapacityLabel}</span>
+              <span className={`immersive-panel-capacity-number openSpaceCapacityNumber-${immersivePanelIndex + 1}`}>{currentImmersivePanel.rightCapacityNumber}</span>
             </p>
-            <p className="immersive-panel-description">{t.openSpaceDescription}</p>
+            <p className={`immersive-panel-description openSpaceDescription-${immersivePanelIndex + 1}`}>{currentImmersivePanel.rightDescription}</p>
           </div>
-          <button className="immersive-nav immersive-nav-prev" type="button" aria-label={t.openSpacePrevAriaLabel}>
+          <button
+            className="immersive-nav immersive-nav-prev"
+            type="button"
+            aria-label={t.openSpacePrevAriaLabel}
+            onClick={() => setImmersivePanelIndex((current) => (current - 1 + immersivePanels.length) % immersivePanels.length)}
+          >
             <svg className="immersive-nav-arrow" width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M48 11H2" stroke="currentColor" strokeWidth="2" />
               <path d="M12 1L1 12L12 23" stroke="currentColor" strokeWidth="2" />
             </svg>
             <span>{t.openSpacePrevLabel}</span>
           </button>
-          <button className="immersive-nav immersive-nav-next" type="button" aria-label={t.openSpaceNextAriaLabel}>
+          <button
+            className="immersive-nav immersive-nav-next"
+            type="button"
+            aria-label={t.openSpaceNextAriaLabel}
+            onClick={() => setImmersivePanelIndex((current) => (current + 1) % immersivePanels.length)}
+          >
             <span>{t.openSpaceNextLabel}</span>
             <svg className="immersive-nav-arrow" width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M0 11H46" stroke="currentColor" strokeWidth="2" />
               <path d="M36 1L47 12L36 23" stroke="currentColor" strokeWidth="2" />
-            </svg>s
+            </svg>
           </button>
         </section>
 
