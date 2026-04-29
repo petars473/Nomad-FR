@@ -719,6 +719,10 @@
   color: #ffffff;
 }
 
+.immersive-nav {
+  display: none;
+}
+
 .membership-card {
   position: relative;
   display: grid;
@@ -1363,6 +1367,45 @@
     font-weight: 300;
     font-size: 18px;
     line-height: normal;
+  }
+
+  .immersive-nav {
+    position: absolute;
+    bottom: 100px;
+    z-index: 2;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .immersive-nav-prev {
+    left: 56px;
+    width: 219px;
+    justify-content: flex-start;
+    gap: 18px;
+  }
+
+  .immersive-nav-next {
+    right: 56px;
+    width: 166px;
+    justify-content: space-between;
+  }
+
+  .immersive-nav-arrow {
+    width: 48px;
+    height: 24px;
+    display: block;
+    flex: 0 0 auto;
   }
 
   .membership-section {
