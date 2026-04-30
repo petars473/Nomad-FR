@@ -1,0 +1,32 @@
+---
+description: Figma-to-code UI implementation rules for this project
+alwaysApply: true
+---
+
+# UI Figma Implementation Rules
+
+- Match Figma desktop 1:1 first, then handle mobile.
+- Map each Figma node to explicit JSX elements and stable CSS classes.
+- Keep text content in translations (`sr.json`, `en.json`), not hardcoded in `App.tsx`.
+- Reuse one style system per section; keep repeated variants visually identical.
+- For image framing, use `object-fit: cover` and adjust with `object-position` per panel when needed.
+
+## Typography
+
+- Use `Marcellus` for display/headline titles and `Inter` for body/captions.
+- Define typography directly on target text classes (avoid relying only on inheritance).
+- If Windows rendering appears heavier than Figma, prefer `font-weight: 300` for body copy in that block.
+- For critical Figma text, set explicit `font-style`, `font-weight`, `font-size`, and `line-height`.
+
+## CSS Accuracy and Hygiene
+
+- Avoid broad selectors that override section-specific text (for example generic `... p` rules).
+- Ensure interactive controls are visible/clickable with correct stacking (`z-index`).
+- Keep selectors minimal; remove dead classes, duplicates, and obsolete comments after refactors.
+- Keep visual output unchanged during cleanup.
+
+## Validation Workflow
+
+- After substantial UI edits, run lint checks and a production build.
+- When a style looks wrong, inspect computed styles first and resolve override/specificity issues before changing layout values.
+- Confirm referenced assets exist in `public/assets/figma` and are real exported images (not placeholder solids).

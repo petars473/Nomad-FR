@@ -701,6 +701,7 @@
   font-optical-sizing: auto;
   line-height: normal;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .immersive-panel-capacity-label {
@@ -714,6 +715,7 @@
   font-weight: 400;
   font-size: 28px;
   line-height: normal;
+  display: inline-block;
 }
 
 .immersive-panel-description {
@@ -1333,34 +1335,82 @@
   }
 
   .features-section {
-    gap: 40px;
+    gap: 56px;
   }
 
   .features-section.section-light {
-    padding-inline: 24px;
+    padding-inline: 57px;
+  }
+
+  .features-title {
+    width: min(100%, 1806px);
+    padding-left: 0;
+    font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0;
   }
 
   .feature-list {
+    width: min(100%, 1806px);
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+    gap: 2px;
   }
 
   .feature-card {
-    min-height: 280px;
+    min-height: 430px;
+    grid-template-rows: 48px 55px 1px auto;
     align-content: start;
+    justify-items: center;
+    gap: 26px;
+    padding: 70px 46px 30px;
   }
 
   .feature-card h3 {
-    font-size: 22px;
+    width: 100%;
+    max-width: 357px;
+    min-height: 55px;
+    margin: 0;
+    font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0;
+    text-align: center;
   }
 
   .feature-list .feature-card:last-child {
     grid-column: 1 / -1;
-    min-height: 320px;
+    min-height: 430px;
+    padding-inline: 46px;
+  }
+
+  .feature-card p {
+    width: 100%;
+    max-width: 357px;
+    padding-top: 26px;
+    margin: 0;
+    border-top: 1px solid #f7f4ee;
+    font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: left;
+    white-space: pre-line;
+  }
+
+  .feature-list .feature-card:last-child h3,
+  .feature-list .feature-card:last-child p {
+    max-width: 809px;
+    text-align: center;
   }
 
   .immersive-section {
-    min-height: 926px;
+    min-height: clamp(620px, 48vw, 926px);
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
@@ -1368,31 +1418,33 @@
   .immersive-media {
     position: relative;
     inset: auto;
-    min-height: 926px;
+    min-height: inherit;
   }
 
   .immersive-copy {
     width: 100%;
     max-width: none;
-    min-height: 926px;
+    min-height: inherit;
     margin-left: 0;
     background: #717766;
-    padding: 0;
-    display: block;
+    padding: clamp(56px, 8vw, 96px) clamp(24px, 5.5vw, 110px);
+    display: grid;
+    align-content: center;
+    gap: clamp(8px, 1vw, 16px);
   }
 
   .immersive-left-copy {
     position: absolute;
-    top: 100px;
-    left: 56px;
+    top: clamp(56px, 10.8%, 100px);
+    left: clamp(24px, 5.84%, 56px);
     padding: 0;
-    width: 848px;
-    max-width: calc(100% - 112px);
+    width: min(88.33%, 848px);
+    max-width: none;
   }
 
   .immersive-left-title {
-    font-size: 40px;
-    width: 588px;
+    font-size: clamp(28px, 2.3vw, 40px);
+    width: min(100%, 588px);
     max-width: 100%;
     font-style: normal;
     font-weight: 300;
@@ -1400,103 +1452,58 @@
   }
 
   .immersive-left-description {
-    position: absolute;
-    left: 0;
-    top: 74px;
+    position: static;
     margin: 0;
-    width: 848px;
-    max-width: 100%;
+    margin-top: clamp(14px, 1.5vw, 24px);
+    width: min(100%, 848px);
     font-style: normal;
     font-weight: 300;
-    font-size: 18px;
+    font-size: clamp(14px, 1.05vw, 18px);
     line-height: normal;
-  }
-
-  .immersive-panel-title {
-    position: absolute;
-    left: 174px;
-    top: 301px;
-    font-size: 40px;
-    width: 257px;
-    max-width: 100%;
-    text-align: center;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-  }
-
-  .immersive-panel-capacity {
-    position: absolute;
-    left: 174px;
-    top: 375px;
-    margin: 0;
-    font-size: 18px;
-    width: 195px;
-    max-width: 100%;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-  }
-
-  .immersive-panel-description {
-    position: absolute;
-    left: 174px;
-    top: 429px;
-    margin: 0;
-    width: 612px;
-    max-width: 100%;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: normal;
+    white-space: pre;
   }
 
   .openSpaceTitle-1,
   .openSpaceTitle-2,
   .openSpaceTitle-3,
   .openSpaceTitle-4 {
-    position: absolute;
-    left: 174px;
-    top: 301px;
+    position: static;
     width: auto;
     max-width: none;
-    text-align: center;
-    font-size: 40px;
+    text-align: left;
+    font-size: clamp(24px, 2.3vw, 40px);
     line-height: normal;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .openSpaceCapacity-1,
   .openSpaceCapacity-2,
   .openSpaceCapacity-3,
   .openSpaceCapacity-4 {
-    position: absolute;
-    left: 174px;
-    top: 375px;
-    width: 195px;
-    max-width: 100%;
+    position: static;
+    width: auto;
+    max-width: none;
     margin: 0;
-    font-size: 18px;
+    font-size: clamp(14px, 1.05vw, 18px);
     line-height: normal;
+    white-space: nowrap;
   }
 
   .openSpaceDescription-1,
   .openSpaceDescription-2,
   .openSpaceDescription-3,
   .openSpaceDescription-4 {
-    position: absolute;
-    left: 174px;
-    top: 429px;
-    width: 612px;
-    max-width: 100%;
+    position: static;
+    width: min(100%, 612px);
+    max-width: none;
     margin: 0;
-    font-size: 18px;
+    font-size: clamp(14px, 1.05vw, 18px);
     line-height: normal;
   }
 
   .immersive-nav {
     position: absolute;
-    bottom: 100px;
+    bottom: clamp(56px, 10.8%, 100px);
     z-index: 2;
     height: 24px;
     display: inline-flex;
@@ -1507,21 +1514,21 @@
     color: #ffffff;
     cursor: pointer;
     font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
-    font-size: 28px;
+    font-size: clamp(20px, 1.65vw, 28px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
   .immersive-nav-prev {
-    left: 56px;
+    left: clamp(24px, 2.92%, 56px);
     width: 219px;
     justify-content: flex-start;
     gap: 18px;
   }
 
   .immersive-nav-next {
-    right: 56px;
+    right: clamp(24px, 2.92%, 56px);
     width: 166px;
     justify-content: space-between;
   }
@@ -1637,17 +1644,63 @@
   }
 
   .features-section.section-light {
-    padding-inline: 16px;
-  }
-
-  .feature-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-inline: 57px;
   }
 
   .membership-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+@media (min-width: 1400px) and (max-width: 1919px) {
+  .immersive-left-title {
+    font-size: clamp(26px, 2vw, 36px);
+  }
+
+  .immersive-left-description {
+    font-size: clamp(14px, 0.95vw, 17px);
+  }
+
+  .openSpaceTitle-1,
+  .openSpaceTitle-2,
+  .openSpaceTitle-3,
+  .openSpaceTitle-4 {
+    font-size: clamp(24px, 2vw, 36px);
+  }
+
+  .openSpaceCapacity-1,
+  .openSpaceCapacity-2,
+  .openSpaceCapacity-3,
+  .openSpaceCapacity-4 {
+    font-size: clamp(14px, 0.95vw, 17px);
+  }
+
+  .openSpaceCapacityLabel-1,
+  .openSpaceCapacityLabel-2,
+  .openSpaceCapacityLabel-3,
+  .openSpaceCapacityLabel-4 {
+    font-size: clamp(14px, 0.95vw, 17px);
+  }
+
+  .openSpaceCapacityNumber-1,
+  .openSpaceCapacityNumber-2,
+  .openSpaceCapacityNumber-3,
+  .openSpaceCapacityNumber-4 {
+    font-size: clamp(19px, 1.45vw, 25px);
+  }
+
+  .openSpaceDescription-1,
+  .openSpaceDescription-2,
+  .openSpaceDescription-3,
+  .openSpaceDescription-4 {
+    font-size: clamp(14px, 0.95vw, 17px);
+  }
+
+  .immersive-nav {
+    font-size: clamp(19px, 1.35vw, 25px);
+  }
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
