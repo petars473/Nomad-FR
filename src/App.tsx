@@ -5,6 +5,8 @@ import {
   contactImage,
   featureIcons,
   galleryImage,
+  galleryImage2,
+  galleryImage3,
   heroImage,
   valueIcons,
   workspaceImage,
@@ -31,7 +33,14 @@ function App() {
   const [language, setLanguage] = useState<'sr' | 'en'>('sr')
   const [newsBarIndex, setNewsBarIndex] = useState(0)
   const [immersivePanelIndex, setImmersivePanelIndex] = useState(0)
+  const [activeGalleryImageIndex, setActiveGalleryImageIndex] = useState<number | null>(null)
+  const [isGalleryLightboxClosing, setIsGalleryLightboxClosing] = useState(false)
   const t = useTranslations(language)
+  const galleryImages = [
+    { src: galleryImage, alt: t.galleryImageAlt1 },
+    { src: galleryImage2, alt: t.galleryImageAlt2 },
+    { src: galleryImage3, alt: t.galleryImageAlt3 },
+  ]
 
   const immersivePanels = [
     {
@@ -80,6 +89,75 @@ function App() {
 
     return () => window.clearInterval(intervalId)
   }, [t.newsBarItems.length])
+
+  useEffect(() => {
+    if (activeGalleryImageIndex === null) {
+      return
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsGalleryLightboxClosing(true)
+      }
+
+      if (event.key === 'ArrowLeft') {
+        setActiveGalleryImageIndex((currentIndex) =>
+          currentIndex === null ? currentIndex : (currentIndex - 1 + galleryImages.length) % galleryImages.length,
+        )
+      }
+
+      if (event.key === 'ArrowRight') {
+        setActiveGalleryImageIndex((currentIndex) =>
+          currentIndex === null ? currentIndex : (currentIndex + 1) % galleryImages.length,
+        )
+      }
+    }
+
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [activeGalleryImageIndex, galleryImages.length])
+
+  useEffect(() => {
+    if (!isGalleryLightboxClosing) {
+      return
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setActiveGalleryImageIndex(null)
+      setIsGalleryLightboxClosing(false)
+    }, 240)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [isGalleryLightboxClosing])
+
+  const openGalleryPreview = (index: number) => {
+    setActiveGalleryImageIndex(index)
+    setIsGalleryLightboxClosing(false)
+  }
+
+  const closeGalleryPreview = () => {
+    if (activeGalleryImageIndex === null || isGalleryLightboxClosing) {
+      return
+    }
+
+    setIsGalleryLightboxClosing(true)
+  }
+
+  const showPreviousGalleryImage = () => {
+    if (activeGalleryImageIndex === null || isGalleryLightboxClosing) {
+      return
+    }
+
+    setActiveGalleryImageIndex((activeGalleryImageIndex - 1 + galleryImages.length) % galleryImages.length)
+  }
+
+  const showNextGalleryImage = () => {
+    if (activeGalleryImageIndex === null || isGalleryLightboxClosing) {
+      return
+    }
+
+    setActiveGalleryImageIndex((activeGalleryImageIndex + 1) % galleryImages.length)
+  }
 
   return (
     <div className="page-shell">
@@ -295,14 +373,62 @@ function App() {
         })()}
 
         <section className="gallery-section section-olive" id="galerija">
-          <h2 className="section-title">{t.galleryTitle}</h2>
-          <div className="gallery-panel">
-            <img src={galleryImage} alt={t.galleryImageAlt} />
-            <div className="gallery-overlay" />
-            <div className="gallery-controls" aria-hidden="true">
-              <span>{t.galleryPrevLabel}</span>
-              <span>{t.galleryNextLabel}</span>
+          <h2 className="section-title gallery-title">{t.galleryTitle}</h2>
+          <div className="gallery-stage">
+            <div className={`gallery-grid${activeGalleryImageIndex !== null ? ' is-preview-open' : ''}`}>
+              {galleryImages.map((image, index) => (
+                <button
+                  className={`gallery-thumb${activeGalleryImageIndex === index ? ' active' : ''}`}
+                  type="button"
+                  key={image.src}
+                  aria-label={t.galleryOpenImageAriaLabel}
+                  onClick={() => openGalleryPreview(index)}
+                >
+                  <img src={image.src} alt={image.alt} />
+                </button>
+              ))}
             </div>
+
+            {activeGalleryImageIndex !== null ? (
+              <div
+                className={`gallery-lightbox${isGalleryLightboxClosing ? ' is-closing' : ''}`}
+                role="dialog"
+                aria-modal="true"
+                aria-label={galleryImages[activeGalleryImageIndex].alt}
+              >
+                <button
+                  className="gallery-lightbox-backdrop"
+                  type="button"
+                  aria-label={t.galleryClosePreviewAriaLabel}
+                  onClick={closeGalleryPreview}
+                />
+                <button
+                  className="gallery-nav gallery-nav-prev"
+                  type="button"
+                  aria-label={t.galleryPrevImageAriaLabel}
+                  onClick={showPreviousGalleryImage}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M14.5 5L7.5 12L14.5 19" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+                <img
+                  className="gallery-lightbox-image"
+                  src={galleryImages[activeGalleryImageIndex].src}
+                  alt={galleryImages[activeGalleryImageIndex].alt}
+                />
+                <button
+                  className="gallery-nav gallery-nav-next"
+                  type="button"
+                  aria-label={t.galleryNextImageAriaLabel}
+                  onClick={showNextGalleryImage}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9.5 5L16.5 12L9.5 19" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </div>
+            ) : null}
           </div>
         </section>
 
