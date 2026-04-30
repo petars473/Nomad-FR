@@ -516,23 +516,50 @@
 .story-section .section-title {
   width: min(100%, 1100px);
   margin-inline: auto;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 2.3vw, 40px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
 .story-copy {
   display: grid;
   gap: 18px;
-  width: min(100%, 800px);
+  width: min(100%, 432px);
   margin-inline: auto;
 }
 
 .story-copy p {
-  font-size: 18px;
+  margin: 0;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-synthesis: none;
+  font-optical-sizing: auto;
+  line-height: normal;
   color: #ffffff;
+  white-space: pre-line;
+}
+
+.story-section .secondary-button {
+  width: min(100%, 340px);
+  min-height: 53px;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .story-image {
   border-radius: 2px;
-  height: 410px;
+  height: clamp(360px, 62vw, 880px);
+  object-position: 64% center;
 }
 
 .features-section {
@@ -1483,12 +1510,12 @@
   }
 
   .story-section {
-    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
     grid-template-areas:
       'title image'
       'copy image'
       'button image';
-    column-gap: 48px;
+    column-gap: 40px;
     row-gap: 24px;
     align-items: start;
   }
@@ -1496,10 +1523,21 @@
   .story-section .section-title {
     grid-area: title;
     margin-bottom: 0;
+    margin-inline: auto;
+    width: min(100%, 432px);
+    justify-self: center;
   }
 
   .story-copy {
     grid-area: copy;
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  .story-copy p {
+    font-size: clamp(14px, 1.05vw, 18px);
+    font-weight: 300;
+    line-height: normal;
   }
 
   .secondary-button {
@@ -1507,10 +1545,19 @@
     width: 300px;
   }
 
+  .story-section .secondary-button {
+    width: 340px;
+    justify-self: center;
+    margin-inline: auto;
+    transform: translateX(-46px);
+  }
+
   .story-image {
     grid-area: image;
     height: 100%;
-    min-height: 620px;
+    min-height: clamp(560px, 39vw, 760px);
+    max-width: 620px;
+    justify-self: end;
   }
 
   .features-section {
