@@ -212,12 +212,12 @@ function App() {
             <p className="display-subtitle">{t.heroSubtitle}</p>
             <p className="display-support">{t.heroSupportText}</p>
             <div className="hero-buttons">
-              <a className="primary-button" href="#kontakt">
-                {t.reservationBtn}
-              </a>
               <button className="secondary-button hero-learn-more" type="button" onClick={() => document.getElementById('o-nama')?.scrollIntoView({ behavior: 'smooth' })}>
                 {t.learnMoreBtn}
               </button>
+              <a className="primary-button" href="#kontakt">
+                {t.reservationBtn}
+              </a>
             </div>
           </div>
 

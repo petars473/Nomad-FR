@@ -123,8 +123,10 @@
         "Lično radno mjesto sa privatnim, zaključanim ormariće",
         "Privatni zoom room za pozive i sastanke",
         "Konferencijski sto za 4 osobe",
-        "Kancelarijska oprema, kafa i topli napici",
-        "Privatni parking i rad uz prirodu"
+        "Kancelarijska oprema",
+        "Kafa i topli napici",
+        "Privatni parking",
+        "Rad uz prirodu"
       ],
       "featured": true
     },
@@ -135,10 +137,13 @@
       "strike": "40",
       "description": "Savršen izbor za povremeni rad ili upoznavanje prostora, dostupno u dnevnom terminu od 07:00 do 16:30.",
       "items": [
-        "Internet konekcija i radno mjesto",
-        "Privatni ormarić i zoom room",
+        "Brza i stabilna internet konekcija",
+        "Lično radno mjesto sa privatnim, zaključanim ormariće",
+        "Privatni zoom room za pozive i sastanke",
         "Konferencijski sto za 4 osobe",
-        "Kafa, topli napici i parking"
+        "Kancelarijska oprema",
+        "Kafa i topli napici",
+        "Privatni parking"
       ]
     },
     {
@@ -148,9 +153,12 @@
       "strike": "50",
       "description": "Idealan izbor za sastanke, edukacije, prezentacije i timski rad, dostupno u večernjem terminu od 17:00 do 22:00.",
       "items": [
+        "Brza i stabilna internet konekcija",
         "Konferencijski sto za 14 osoba",
-        "Interaktivni panel i zoom room",
-        "Kancelarijska oprema i topli napici",
+        "Interaktivni panel",
+        "Privatni zoom room za pozive i sastanke",
+        "Kancelarijska oprema",
+        "Kafa i topli napici",
         "Privatni parking"
       ]
     },
@@ -165,7 +173,8 @@
         "Poštansko sanduće i prijem pošte",
         "Upravljanje poštom i obavještavanje",
         "Istaknut naziv ili logo firme unutar prostora",
-        "Podrška za sastanke i administraciju"
+        "Podrška za sastanke i administraciju",
+        "Profesionalna knjigovodstvena podrška"
       ]
     }
   ],
