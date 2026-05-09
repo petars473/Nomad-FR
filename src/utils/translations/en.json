@@ -205,6 +205,29 @@
     "captchaPlaceholder": "Captcha",
     "submitBtn": "SEND MESSAGE"
   },
+  "booking": {
+    "title": "BOOK A WORKSPACE",
+    "introLine1": "Book your spot at NOMAD coworking space in just a few simple steps.",
+    "introLine2Before": "Before booking, you can explore detailed package options in the",
+    "introMembershipLabel": "Membership",
+    "introLine2After": "section. After booking, a confirmation will be sent to your email.",
+    "namePlaceholder": "Full name",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Phone",
+    "packagePlaceholder": "Package",
+    "datePlaceholder": "Date of arrival",
+    "notesPlaceholder": "Additional notes or special requests",
+    "sendReservation": "SEND RESERVATION",
+    "paymentNoteLine1": "Payment is made upon arrival,",
+    "paymentNoteLine2": "by cash or card.",
+    "captchaAlt": "Captcha",
+    "messages": {
+      "phoneRequired": "Phone number is required.",
+      "submitSuccess": "Booking submitted successfully!",
+      "submitFailed": "Failed to submit booking. Please try again.",
+      "submitError": "An error occurred. Please try again."
+    }
+  },
   "contactImageAlt": "NOMAD space detail",
   "footerBrand": "NOMAD",
   "footerDescription": "Coworking space in Trebinje. Where ideas grow, and people connect.",
@@ -220,5 +243,51 @@
   "footerNavigation": ["About", "Workspace", "Membership", "Gallery", "FAQ", "Contact"],
   "footerPackages": ["NOMAD Member", "NOMAD Day", "NOMAD Team", "NOMAD Business"],
   "footerInfo": ["Working hours", "House rules", "Privacy policy", "Terms of use"],
+  "infoPages": {
+    "workingHours": {
+      "title": "WORKING HOURS",
+      "intro": "NOMAD coworking space in Trebinje is open every day of the week.",
+      "standardLabel": "Standard working hours (NOMAD Day & NOMAD Member)",
+      "standardRange": "07:00 - 16:30",
+      "teamLabel": "NOMAD Team - Conference table",
+      "teamRange": "17:00 - 22:00",
+      "reservationPrefix": "Workspace and conference space are available with prior",
+      "reservationLink": "reservation",
+      "reservationSuffix": "."
+    },
+    "houseRules": {
+      "title": "HOUSE RULES",
+      "intro": "To ensure a comfortable and professional working environment for all users, please follow these guidelines:",
+      "items": [
+        "Maintain a quiet and professional atmosphere",
+        "Respect other users and their workspace",
+        "Use shared areas responsibly and keep them tidy",
+        "Handle coworking equipment with care and use it as intended",
+        "Disruptive behavior, damage to the space, or inappropriate conduct is not allowed"
+      ],
+      "closing": "NOMAD reserves the right to limit or terminate access in case of rule violations."
+    },
+    "privacyPolicy": {
+      "title": "PRIVACY POLICY",
+      "paragraphs": [
+        "NOMAD respects the privacy of its users and is committed to protecting personal data.",
+        "Information provided through the contact or reservation form (name, email, phone, and message) is used solely for communication and processing inquiries or reservations.",
+        "NOMAD does not share personal data with third parties or use it for marketing purposes without user consent.",
+        "All collected data is used exclusively for internal communication and service organization.",
+        "For more information about data processing, you can contact us via the contact form or by phone."
+      ]
+    },
+    "termsOfUse": {
+      "title": "TERMS OF USE",
+      "intro": "By using the NOMAD Coworking website, you agree to the following terms:",
+      "paragraphs": [
+        "The content on this website is provided for informational purposes only. NOMAD reserves the right to modify content, pricing, packages, and service availability without prior notice.",
+        "All information about memberships, packages, and services represents a general overview of the coworking offer. Final terms are defined upon reservation confirmation or agreement with the user.",
+        "Copying, distributing, or using content from this website without prior permission is prohibited.",
+        "NOMAD is not responsible for potential technical issues or temporary unavailability of the website.",
+        "For any additional questions, feel free to contact us via the website contact form or by phone."
+      ]
+    }
+  },
   "footerCopyright": "© 2026 NOMAD. All rights reserved."
 }
