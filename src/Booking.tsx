@@ -65,10 +65,8 @@ function Booking() {
   const isDay = selectedPackage.toLowerCase().includes('day')
 
   async function onSubmit(data: BookingFormValues) {
-            console.log('KARAAAAA:')
-
     try {
-      const response = await apiCall('/inquiry', {
+      const response = await apiCall('api/reservations/inquiries', {
         method: 'POST',
         body: JSON.stringify(data),
       })

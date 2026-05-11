@@ -2,7 +2,17 @@
  * Application configuration
  */
 
-const API_BASE_URL = '/';
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? '/').trim()
+
+function joinUrl(baseUrl: string, path: string): string {
+  const normalizedPath = `/${path.replace(/^\/+/, '')}`
+
+  if (!baseUrl || baseUrl === '/') {
+    return normalizedPath
+  }
+
+  return `${baseUrl.replace(/\/+$/, '')}${normalizedPath}`
+}
 
 const config = {
   /**
@@ -14,7 +24,7 @@ const config = {
     if (url.startsWith('http')) {
       return url
     }
-    return `${API_BASE_URL}${url.startsWith('/') ? url : `/${url}`}`
+    return joinUrl(API_BASE_URL, url)
   },
 
   /**
