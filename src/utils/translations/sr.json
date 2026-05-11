@@ -232,6 +232,29 @@
     "captchaPlaceholder": "Captcha",
     "submitBtn": "POŠALJITE PORUKU"
   },
+  "booking": {
+    "title": "REZERVIŠITE RADNI PROSTOR",
+    "introLine1": "Rezervišite svoje mjesto u NOMAD coworking prostoru kroz nekoliko jednostavnih koraka.",
+    "introLine2Before": "Prije rezervacije možete pogledati detaljne opcije paketa u sekciji",
+    "introMembershipLabel": "Članstvo",
+    "introLine2After": "a nakon rezervacije potvrda stiže na vaš email.",
+    "namePlaceholder": "Ime i prezime",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Telefon",
+    "packagePlaceholder": "Paket",
+    "datePlaceholder": "Datum dolaska",
+    "notesPlaceholder": "Dodatne napomene ili posebni zahtjevi",
+    "sendReservation": "POŠALJI REZERVACIJU",
+    "paymentNoteLine1": "Plaćanje se vrši po dolasku,",
+    "paymentNoteLine2": "gotovinom ili karticom.",
+    "captchaAlt": "Captcha",
+    "messages": {
+      "phoneRequired": "Broj telefona je obavezan.",
+      "submitSuccess": "Rezervacija je uspješno poslana!",
+      "submitFailed": "Slanje rezervacije nije uspjelo. Pokušajte ponovo.",
+      "submitError": "Došlo je do greške. Pokušajte ponovo."
+    }
+  },
   "contactImageAlt": "Detalj NOMAD prostora",
   "footerBrand": "NOMAD",
   "footerDescription": "Coworking space u Trebinju. Prostor gdje ideje rade, a ljudi se povezuju.",
@@ -246,5 +269,52 @@
   "footerInfoTitle": "INFORMACIJE",
   "footerNavigation": ["O nama", "Radni prostor", "Članstvo", "Galerija", "FAQ", "Kontakt"],
   "footerPackages": ["NOMAD Member", "NOMAD Day", "NOMAD Team", "NOMAD Business"],
-  "footerInfo": ["Radno vrijeme", "Pravila korištenja", "Politika privatnosti", "Uslovi korištenja"]
+  "footerInfo": ["Radno vrijeme", "Pravila korištenja", "Politika privatnosti", "Uslovi korištenja"],
+  "infoPages": {
+    "workingHours": {
+      "title": "RADNO VRIJEME",
+      "intro": "NOMAD Coworking prostor u Trebinju otvoren je svakog dana u sedmici.",
+      "standardLabel": "Standardno radno vrijeme (NOMAD Day & NOMAD Member)",
+      "standardRange": "07:00 - 16:30",
+      "teamLabel": "NOMAD Team - Konferencijski sto",
+      "teamRange": "17:00 - 22:00",
+      "reservationPrefix": "Korištenje radnog prostora i konferencijskog prostora moguće je uz prethodnu",
+      "reservationLink": "rezervaciju",
+      "reservationSuffix": "."
+    },
+    "houseRules": {
+      "title": "PRAVILA KORIŠTENJA",
+      "intro": "Kako bismo osigurali ugodno i profesionalno radno okruženje za sve korisnike, molimo da poštujete sljedeća pravila:",
+      "items": [
+        "Održavajte mirnu i profesionalnu radnu atmosferu",
+        "Poštujte ostale korisnike i njihov radni prostor",
+        "Zajedničke površine koristite odgovorno i ostavite ih urednim",
+        "Oprema coworking prostora koristi se pažljivo i prema namjeni",
+        "Zabranjeno je ometanje drugih korisnika, oštećivanje prostora ili neprimjereno ponašanje"
+      ],
+      "closing": "NOMAD zadržava pravo ograničiti ili prekinuti korištenje prostora u slučaju nepoštovanja pravila."
+    },
+    "privacyPolicy": {
+      "title": "POLITIKA PRIVATNOSTI",
+      "paragraphs": [
+        "NOMAD poštuje privatnost svojih korisnika i obavezuje se na zaštitu ličnih podataka.",
+        "Podaci koje korisnici ostave putem kontakt ili rezervacione forme (ime, email, telefon i poruka) koriste se isključivo u svrhu komunikacije i obrade upita ili rezervacije.",
+        "NOMAD ne dijeli lične podatke s trećim stranama niti ih koristi u marketinške svrhe bez saglasnosti korisnika.",
+        "Svi prikupljeni podaci koriste se isključivo za internu komunikaciju i organizaciju usluga coworking prostora.",
+        "Za dodatne informacije o obradi podataka možete nas kontaktirati putem kontakt forme ili telefonom."
+      ]
+    },
+    "termsOfUse": {
+      "title": "USLOVI KORIŠTENJA",
+      "intro": "Korištenjem web stranice NOMAD Coworking prihvatate sljedeće uslove korištenja:",
+      "paragraphs": [
+        "Sadržaj objavljen na ovoj stranici služi isključivo u informativne svrhe. NOMAD zadržava pravo izmjene sadržaja, cijena, paketa i dostupnosti usluga bez prethodne najave.",
+        "Sve informacije o članstvima, paketima i uslugama predstavljaju opšti pregled ponude coworking prostora. Konačni uslovi korištenja prostora i rezervacije definišu se prilikom potvrde rezervacije ili sklapanja dogovora sa korisnikom.",
+        "Zabranjeno je kopiranje, distribucija ili korištenje sadržaja ove stranice bez prethodne saglasnosti vlasnika.",
+        "NOMAD ne preuzima odgovornost za eventualne tehničke greške ili privremenu nedostupnost web stranice.",
+        "Za sva dodatna pitanja možete nas kontaktirati putem kontakt forme na sajtu ili telefonom."
+      ]
+    }
+  },
+  "footerCopyright": "© 2026 NOMAD. sva prava zadržana."
 }
