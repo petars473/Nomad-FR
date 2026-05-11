@@ -230,7 +230,13 @@
     "subjectPlaceholder": "Tema poruke",
     "messagePlaceholder": "Poruka",
     "captchaPlaceholder": "Captcha",
-    "submitBtn": "POŠALJITE PORUKU"
+    "submitBtn": "POŠALJITE PORUKU",
+    "messages": {
+      "phoneRequired": "Broj telefona je obavezan.",
+      "submitSuccess": "Poruka je uspješno poslana!",
+      "submitFailed": "Slanje poruke nije uspjelo. Pokušajte ponovo.",
+      "submitError": "Došlo je do greške. Pokušajte ponovo."
+    }
   },
   "booking": {
     "title": "REZERVIŠITE RADNI PROSTOR",
@@ -250,10 +256,23 @@
     "captchaAlt": "Captcha",
     "messages": {
       "phoneRequired": "Broj telefona je obavezan.",
+      "dateRequired": "Molimo odaberite datum.",
       "submitSuccess": "Rezervacija je uspješno poslana!",
       "submitFailed": "Slanje rezervacije nije uspjelo. Pokušajte ponovo.",
       "submitError": "Došlo je do greške. Pokušajte ponovo."
+    },
+    "confirmation": {
+      "title": "REZERVACIJA PRIMLJENA",
+      "line1": "Hvala! Vaša rezervacija je uspješno poslana.",
+      "line2": "Pregledaćemo vaš zahtjev i poslati potvrdu na vašu email adresu u najkraćem roku.",
+      "backBtn": "NAZAD NA POČETNU"
     }
+  },
+  "contactConfirmation": {
+    "title": "PORUKA POSLANA",
+    "line1": "Poruka je uspješno poslana.",
+    "line2": "Javit ćemo vam se uskoro.",
+    "backBtn": "NAZAD NA POČETNU"
   },
   "contactImageAlt": "Detalj NOMAD prostora",
   "footerBrand": "NOMAD",

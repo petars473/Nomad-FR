@@ -49,6 +49,30 @@
   gap: 16px;
 }
 
+.info-page-house-rules {
+  font-family: Inter, 'Avenir Next', 'Segoe UI', sans-serif;
+  max-width: 980px;
+  line-height: 1.45;
+}
+
+.info-page-house-rules-intro {
+  margin-bottom: 22px;
+}
+
+.info-page-house-rules-list {
+  margin: 0 0 34px;
+  padding-left: 27px;
+  gap: 18px;
+}
+
+.info-page-house-rules-list li {
+  line-height: 1.4;
+}
+
+.info-page-house-rules-closing {
+  margin-top: 0;
+}
+
 .info-page-inline-link {
   color: inherit;
   text-underline-offset: 2px;

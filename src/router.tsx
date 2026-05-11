@@ -2,6 +2,8 @@ import { createRootRoute, createRoute, createRouter } from '@tanstack/react-rout
 import App from './App'
 import AppLayout from './AppLayout'
 import Booking from './Booking'
+import BookingConfirmation from './BookingConfirmation'
+import ContactConfirmation from './ContactConfirmation'
 import { HouseRulesPage, PrivacyPolicyPage, TermsOfUsePage, WorkingHoursPage } from './InfoPages'
 
 const rootRoute = createRootRoute({
@@ -24,6 +26,18 @@ const bookingPackageRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/booking/$bookingPackage',
   component: Booking,
+})
+
+const bookingConfirmationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/booking/confirmation',
+  component: BookingConfirmation,
+})
+
+const contactConfirmationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/contact/confirmation',
+  component: ContactConfirmation,
 })
 
 const workingHoursRoute = createRoute({
@@ -53,7 +67,9 @@ const termsOfUseRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   bookingRoute,
+  bookingConfirmationRoute,
   bookingPackageRoute,
+  contactConfirmationRoute,
   workingHoursRoute,
   houseRulesRoute,
   privacyPolicyRoute,
