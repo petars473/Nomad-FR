@@ -16,6 +16,24 @@ type BookingFormValues = {
   notes: string
 }
 
+const ReservationPackage = {
+  NomadDay: 1,
+  NomadTeam: 2,
+  NomadMember: 3,
+  NomadBusiness: 4,
+  NeedRecommendation: 5,
+} as const
+
+type ReservationPackage = (typeof ReservationPackage)[keyof typeof ReservationPackage]
+
+type CreateInquiryRequest = {
+  Package: ReservationPackage
+  FullName: string
+  Email: string
+  PhoneNumber: string
+  Notes?: string
+}
+
 // const CAPTCHA_IMAGE = '/assets/figma/captcha.png'
 
 function toPackageSlug(value: string): string {
@@ -35,6 +53,25 @@ function resolvePackageFromUrl(bookingPackage: string | undefined, options: stri
   }
 
   return decodeURIComponent(bookingPackage).replace(/[-_]+/g, ' ').trim()
+}
+
+function toReservationPackage(value: string): ReservationPackage {
+  const slug = toPackageSlug(value)
+
+  if (slug === 'nomad-day') {
+    return ReservationPackage.NomadDay
+  }
+  if (slug === 'nomad-team') {
+    return ReservationPackage.NomadTeam
+  }
+  if (slug === 'nomad-member') {
+    return ReservationPackage.NomadMember
+  }
+  if (slug === 'nomad-business') {
+    return ReservationPackage.NomadBusiness
+  }
+
+  return ReservationPackage.NeedRecommendation
 }
 
 function Booking() {
@@ -66,10 +103,18 @@ function Booking() {
   const isNomadDay = selectedPackage.trim().toLowerCase() === 'nomad day'
 
   async function onSubmit(data: BookingFormValues) {
+    const payload: CreateInquiryRequest = {
+      Package: toReservationPackage(data.package),
+      FullName: data.name,
+      Email: data.email,
+      PhoneNumber: data.phone,
+      Notes: data.notes?.trim() || undefined,
+    }
+
     try {
       const response = await apiCall('/inquiry', {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
       if (response.ok) {
         await navigate({ to: '/booking/confirmation' })
