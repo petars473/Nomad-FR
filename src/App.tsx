@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { useTranslations } from './utils/translations'
 import { useLanguage } from './context/useLanguage.ts'
@@ -35,7 +35,6 @@ function toBookingSlug(value: string): string {
 
 function App() {
   const [openFaq, setOpenFaq] = useState(0)
-    const [newsBarIndex, setNewsBarIndex] = useState(0)
   const [immersivePanelIndex, setImmersivePanelIndex] = useState(0)
   const [activeGalleryImageIndex, setActiveGalleryImageIndex] = useState<number | null>(null)
   const [isGalleryLightboxClosing, setIsGalleryLightboxClosing] = useState(false)
@@ -86,14 +85,6 @@ function App() {
     },
   ]
   const currentImmersivePanel = immersivePanels[immersivePanelIndex]
-
-  useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setNewsBarIndex((currentIndex) => (currentIndex + 1) % t.newsBarItems.length)
-    }, 4000)
-
-    return () => window.clearInterval(intervalId)
-  }, [t.newsBarItems.length])
 
   useEffect(() => {
     if (activeGalleryImageIndex === null) {
