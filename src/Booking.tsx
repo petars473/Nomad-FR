@@ -68,7 +68,7 @@ function Booking() {
             console.log('KARAAAAA:')
 
     try {
-      const response = await apiCall('/bookings', {
+      const response = await apiCall('/inquiry', {
         method: 'POST',
         body: JSON.stringify(data),
       })
