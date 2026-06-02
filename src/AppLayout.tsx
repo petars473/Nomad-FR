@@ -1,6 +1,7 @@
 import { Outlet } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { Toaster } from 'sonner'
+import { DevPageNav } from './components/DevPageNav'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { LanguageProvider } from './context/LanguageContext'
@@ -43,6 +44,7 @@ function LayoutShell() {
         onLanguageChange={setLanguage}
       />
       <Outlet />
+      <DevPageNav />
       <Footer
         footerDescription={t.footerDescription}
         footerTeamTitle={t.footerTeamTitle}

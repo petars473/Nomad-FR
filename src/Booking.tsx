@@ -5,6 +5,7 @@ import { toast } from 'sonner'
 import { useLanguage } from './context/useLanguage.ts'
 import { useTranslations } from './utils/translations'
 import { useApi } from './app/hooks/useApi'
+import { PLACEHOLDER_RECAPTCHA_TOKEN } from './app/recaptcha'
 import './Booking.css'
 
 type BookingFormValues = {
@@ -32,6 +33,16 @@ type CreateInquiryRequest = {
   Email: string
   PhoneNumber: string
   Notes?: string
+  RecaptchaToken: string
+}
+
+type CreateBookingRequest = {
+  FullName: string
+  Email: string
+  PhoneNumber: string
+  ArrivalDate: string
+  Notes?: string
+  RecaptchaToken: string
 }
 
 // const CAPTCHA_IMAGE = '/assets/figma/captcha.png'
@@ -100,22 +111,36 @@ function Booking() {
     defaultValues: { package: defaultPackage },
   })
   const [selectedPackage, setSelectedPackage] = useState(defaultPackage)
-  const isNomadDay = selectedPackage.trim().toLowerCase() === 'nomad day'
+  const isNomadDay = toPackageSlug(selectedPackage) === 'nomad-day'
 
   async function onSubmit(data: BookingFormValues) {
-    const payload: CreateInquiryRequest = {
-      Package: toReservationPackage(data.package),
-      FullName: data.name,
-      Email: data.email,
-      PhoneNumber: data.phone,
-      Notes: data.notes?.trim() || undefined,
-    }
+    const notes = data.notes?.trim() || undefined
+    const recaptchaToken = PLACEHOLDER_RECAPTCHA_TOKEN
 
     try {
-      const response = await apiCall('api/reservations/inquiries', {
-        method: 'POST',
-        body: JSON.stringify(payload),
-      })
+      const response = isNomadDay
+        ? await apiCall('/api/reservations/nomad-day', {
+            method: 'POST',
+            body: JSON.stringify({
+              FullName: data.name,
+              Email: data.email,
+              PhoneNumber: data.phone,
+              ArrivalDate: data.date,
+              Notes: notes,
+              RecaptchaToken: recaptchaToken,
+            } satisfies CreateBookingRequest),
+          })
+        : await apiCall('/api/reservations/inquiries', {
+            method: 'POST',
+            body: JSON.stringify({
+              Package: toReservationPackage(data.package),
+              FullName: data.name,
+              Email: data.email,
+              PhoneNumber: data.phone,
+              Notes: notes,
+              RecaptchaToken: recaptchaToken,
+            } satisfies CreateInquiryRequest),
+          })
       if (response.ok) {
         await navigate({ to: '/booking/confirmation' })
       } else {

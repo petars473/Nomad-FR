@@ -289,7 +289,6 @@
 .display-title,
 .display-subtitle,
 .section-title,
-.membership-card h3,
 .feature-card h3,
 .faq-section .section-title,
 .footer-block h3,
@@ -376,7 +375,7 @@
   color: #f7f4ee;
 }
 
-.membership-card.featured .package-button {
+.membership-card--featured .package-button {
   background: #e9e4d8;
   color: #717766;
 }
@@ -496,7 +495,6 @@
 }
 
 .feature-card h3,
-.membership-card h3,
 .section-title {
   font-size: 26px;
   line-height: 1.2;
@@ -519,18 +517,9 @@
   text-align: center;
 }
 
-.membership-card li {
-  font-size: 16px;
-  line-height: 1.55;
-}
-
 .story-copy,
 .feature-card p,
-.membership-description,
 .faq-answer,
-.contact-intro,
-.contact-form input,
-.contact-form textarea,
 .footer-section p,
 .footer-section li {
   font-size: 15px;
@@ -625,19 +614,24 @@
 }
 
 .faq-list {
-  width: min(100%, 1100px);
+  width: min(100%, 1476px);
   margin-inline: auto;
 }
 
 .faq-section .section-title {
-  width: min(100%, 1100px);
+  width: min(100%, 1476px);
   margin-inline: auto;
-  padding-bottom: 4px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 2vw, 34px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
-.feature-card,
-.membership-card,
-.faq-item {
+.feature-card {
   border: 1px solid rgba(113, 119, 102, 0.32);
   padding: 24px;
   background: rgba(247, 244, 238, 0.34);
@@ -873,60 +867,110 @@
   }
 }
 
+.membership-section {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.membership-section .section-title {
+  width: min(100%, 1476px);
+  margin-inline: auto;
+  margin-bottom: 0;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 2vw, 34px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.membership-list {
+  width: min(100%, 1476px);
+  margin-inline: auto;
+  align-items: stretch;
+  gap: clamp(24px, 3.3vw, 63px);
+}
+
 .membership-card {
   position: relative;
-  display: grid;
-  grid-template-rows: auto auto auto auto 1fr auto auto;
-  align-content: start;
-  gap: 12px;
-  padding: 26px 30px 24px;
-  background: #f7f4ee;
-  text-align: left;
-  width: 450px;
-  height: 861px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: min(100%, 450px);
+  min-height: 0;
+  margin-inline: auto;
+  padding: clamp(72px, 11vw, 88px) clamp(20px, 4.2vw, 47px) clamp(24px, 3vw, 32px);
+  color: #1f1f1c;
+  border: 1px solid transparent;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.membership-card.featured {
+/* paket 1 — NOMAD MEMBER */
+.membership-card--featured {
   background: #717766;
   color: #f7f4ee;
-  border-color: rgba(247, 244, 238, 0.18);
 }
 
-.membership-badge {
+/* paket 2 — NOMAD DAY */
+.membership-card--sand {
+  background: #e9e4d8;
+  color: #1f1f1c;
+}
+
+/* paket 3 — NOMAD TEAM */
+.membership-card--framed {
+  background: #f7f4ee;
+  color: #1f1f1c;
+  border-color: #1f1f1c;
+}
+
+.membership-badge,
+.business-card-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: clamp(14px, 2vw, 20px);
+  left: clamp(14px, 2vw, 20px);
+  width: clamp(48px, 8vw, 60px);
+  height: clamp(48px, 8vw, 60px);
   line-height: 0;
 }
 
-.membership-badge svg {
-  width: 40px;
-  height: 40px;
+.membership-badge svg,
+.business-card-badge svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .membership-eyebrow {
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: rgba(31, 31, 28, 0.76);
-  margin: 0;
-}
-
-.membership-card.featured .membership-eyebrow {
-  color: rgba(247, 244, 238, 0.8);
-}
-
-.membership-card h3 {
-  color: #1f1f1c;
-  text-align: center;
-  font-family: Marcellus;
-  font-size: 28px;
+  margin: 0 0 clamp(10px, 1.2vw, 12px);
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 1.2vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align: center;
+  color: #1f1f1c;
 }
 
-.membership-card.featured h3 {
+.membership-card--featured .membership-eyebrow {
+  color: #f7f4ee;
+}
+
+.membership-card-title,
+.business-card-title {
+  margin: 0 0 clamp(12px, 1.4vw, 16px);
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(24px, 2.2vw, 28px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: #1f1f1c;
+}
+
+.membership-card--featured .membership-card-title {
   color: #f7f4ee;
 }
 
@@ -935,131 +979,222 @@
   align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 8px;
+  gap: clamp(10px, 1.1vw, 14px);
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  padding-bottom: clamp(16px, 1.8vw, 22px);
   border-bottom: 1px solid rgba(31, 31, 28, 0.45);
-  gap: 10px;
-  font-size: clamp(24px, 2.5vw, 30px);
-  font-weight: 700;
-  line-height: 1.06;
-  margin: 0;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(26px, 2.1vw, 32px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-.membership-card.featured .membership-price {
+.membership-card--featured .membership-price {
   border-bottom-color: rgba(247, 244, 238, 0.5);
 }
 
 .membership-strike {
-  text-decoration: line-through;
-  opacity: 0.6;
-  font-size: clamp(18px, 1.9vw, 22px);
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(19px, 1.45vw, 22px);
+  font-style: normal;
+  font-weight: 400;
   line-height: 1;
+  text-decoration: line-through;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.65;
+}
+
+.membership-price-value {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
 }
 
 .membership-includes {
-  margin: 0;
-  font-size: 15px;
+  margin: 0 0 clamp(12px, 1.2vw, 14px);
+  align-self: stretch;
+  text-align: left;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 0.95vw, 17px);
+  font-style: normal;
+  font-weight: 300;
+  font-synthesis: none;
+  line-height: 1.45;
+  color: inherit;
 }
 
-.membership-card ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  align-content: start;
-  gap: 8px;
-}
-
-.membership-card li::before {
-  content: '•';
-  margin-right: 8px;
-}
-
-.membership-description {
-  margin: 0;
-  padding-top: 22px;
-  min-height: 145px;
-}
-
-.membership-card .package-button {
-  margin-top: auto;
-  align-self: end;
-}
-
-/* ── NOMAD BUSINESS section ─────────────────────────────── */
-.business-section {
-  display: grid;
-  gap: 32px;
-  padding-block: 56px;
-}
-
-.business-card {
-  position: relative;
-  display: grid;
-  gap: 16px;
-  padding: 40px 32px 36px;
-  background: #E9E4D8;
-  text-align: center;
-  border: 1px solid rgba(31, 31, 28, 0.18);
-}
-
-.business-card-badge {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  line-height: 0;
-}
-
-.business-eyebrow {
-  text-align: center;
-  padding-left: 56px;
-}
-
-.business-card-title {
-  text-align: center;
-}
-
-.business-price {
-  justify-content: center;
-}
-
+.membership-features,
 .business-items {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
+  align-content: start;
+  align-self: stretch;
+  gap: clamp(8px, 0.9vw, 10px);
   text-align: left;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 0.95vw, 17px);
+  font-style: normal;
+  font-weight: 300;
+  font-synthesis: none;
+  line-height: 1.55;
 }
 
+.membership-features li::before,
 .business-items li::before {
   content: '•';
   margin-right: 8px;
 }
 
+.membership-description,
 .business-desc {
+  margin: auto 0 0;
+  padding-top: clamp(18px, 2vw, 24px);
+  align-self: stretch;
   min-height: 0;
-  padding-top: 8px;
+  text-align: left;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 0.95vw, 17px);
+  font-style: normal;
+  font-weight: 300;
+  font-synthesis: none;
+  line-height: 1.45;
+  color: inherit;
 }
 
-.business-btn {
-  justify-self: center;
+.membership-card .package-button {
   width: 100%;
-  max-width: 280px;
-  margin-top: 8px;
+  max-width: min(100%, 357px);
+  min-height: clamp(48px, 6vw, 53px);
+  margin: clamp(18px, 2vw, 24px) auto 0;
+  align-self: center;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── NOMAD BUSINESS (paket 4) ───────────────────────────── */
+.business-block {
+  display: grid;
+  gap: clamp(28px, 3.5vw, 48px);
+  width: min(100%, 1476px);
+  margin-inline: auto;
+  justify-items: stretch;
+}
+
+.business-block-title {
+  width: 100%;
+  margin-bottom: 0;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 2vw, 34px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.business-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  min-height: clamp(480px, 52vw, 571px);
+  margin-inline: 0;
+  padding: clamp(72px, 11vw, 88px) clamp(20px, 4.2vw, 47px) clamp(28px, 3vw, 40px);
+  background: #e9e4d8;
+  color: #1f1f1c;
+  border: 1px solid transparent;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.membership-card--business {
+  background: #e9e4d8;
+}
+
+.business-card-header {
+  display: grid;
+  gap: clamp(10px, 1.2vw, 12px);
+  justify-items: center;
+  width: 100%;
+  margin-bottom: clamp(14px, 1.6vw, 20px);
+}
+
+.business-card .membership-eyebrow,
+.business-card .business-card-title,
+.business-card .membership-price {
+  width: 100%;
+  max-width: min(100%, 520px);
+  margin-inline: auto;
+}
+
+.business-card .membership-price {
+  margin-bottom: clamp(16px, 1.8vw, 22px);
+}
+
+.business-card .membership-includes {
+  margin-bottom: clamp(12px, 1.2vw, 14px);
+}
+
+.business-card .business-items {
+  margin-bottom: clamp(18px, 2vw, 28px);
+}
+
+.business-card .business-desc {
+  margin: 0 0 clamp(22px, 2.4vw, 32px);
+  padding-top: 0;
+  max-width: none;
+}
+
+.business-card-badge {
+  left: 20%;
+  transform: none;
+}
+
+.business-card .business-btn {
+  width: 100%;
+  max-width: min(100%, 357px);
+  min-height: clamp(48px, 6vw, 53px);
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  .business-items {
+  .business-card .business-items {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(32px, 4vw, 56px);
+    row-gap: clamp(12px, 1.2vw, 16px);
   }
 }
 
 @media (min-width: 1024px) {
-  .business-items {
+  .membership-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+  }
+
+  .membership-card:not(.business-card) {
+    min-height: 861px;
+    max-width: 450px;
+  }
+
+  .business-card .business-items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(48px, 5.8vw, 86px);
+    row-gap: clamp(14px, 1.2vw, 18px);
   }
 }
-/* ── end NOMAD BUSINESS section ─────────────────────────── */
 
 .footer-list {
   margin: 0;
@@ -1268,46 +1403,207 @@
   }
 }
 
-.faq-item {
-  padding: 0;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #717766;
-  color: #f7f4ee;
+.faq-section {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
 }
 
-.faq-item.open {
-  background: #64695b;
+.faq-item {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
 }
 
 .faq-trigger {
   width: 100%;
+  min-height: clamp(48px, 6vw, 53px);
   border: 0;
-  background: transparent;
-  color: inherit;
+  border-radius: 8px;
+  background: #717766;
+  color: #f7f4ee;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 18px 20px;
+  gap: clamp(12px, 2vw, 20px);
+  padding: clamp(14px, 1.6vw, 18px) clamp(20px, 2.5vw, 27px);
   text-align: left;
-  font-size: 15px;
   cursor: pointer;
+  font: inherit;
+  transition: background-color 220ms ease;
 }
 
-.faq-symbol {
-  font-size: 24px;
-  line-height: 1;
+.faq-item.open .faq-trigger {
+  background: #64695b;
+}
+
+.faq-question {
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.faq-icon {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  color: #f7f4ee;
+}
+
+.faq-icon-svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: auto;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.faq-icon-svg:last-child {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.85);
+}
+
+.faq-item.open .faq-icon-svg:first-child {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.85);
+}
+
+.faq-item.open .faq-icon-svg:last-child {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms ease;
+}
+
+.faq-item.open .faq-answer-wrap {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-panel {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 clamp(20px, 4.2vw, 47px);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 240ms ease 40ms,
+    transform 280ms ease,
+    padding 280ms ease;
+}
+
+.faq-item.open .faq-answer-panel {
+  padding: clamp(14px, 1.6vw, 20px) clamp(20px, 4.2vw, 47px) clamp(4px, 0.6vw, 8px);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-trigger,
+  .faq-icon-svg,
+  .faq-answer-wrap,
+  .faq-answer-panel {
+    transition: none;
+  }
+
+  .faq-answer-panel {
+    transform: none;
+  }
 }
 
 .faq-answer {
   margin: 0;
-  padding: 0 20px 18px;
+  padding: 0;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: normal;
+  color: #1f1f1c;
+}
+
+.faq-answer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+.faq-answer-link:hover {
+  color: #717766;
 }
 
 .contact-section {
   display: grid;
-  gap: 22px;
+  gap: clamp(20px, 3vw, 28px);
+}
+
+.contact-lead {
+  display: grid;
+  gap: clamp(20px, 2.4vw, 46px);
+}
+
+.contact-section .section-title {
+  margin-bottom: 0;
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.contact-intro {
+  display: grid;
+  gap: 0;
+  width: min(100%, 630px);
+  margin: 0;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: normal;
+  color: #1f1f1c;
+}
+
+.contact-intro p {
+  margin: 0;
+}
+
+.contact-intro p + p {
+  margin-top: 18px;
+}
+
+.contact-intro-phones {
+  display: block;
+}
+
+.contact-intro-phones a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-intro-phones a:hover {
+  color: #717766;
+}
+
+.contact-intro-phone-sep {
+  margin-inline: 0.35em;
 }
 
 .contact-form {
@@ -1324,8 +1620,37 @@
   border-radius: 8px;
   background: #e9e4d8;
   color: #1f1f1c;
+  min-height: 53px;
   padding: 16px 20px;
   resize: vertical;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: normal;
+}
+
+.contact-field-message {
+  min-height: 140px;
+  padding-block: 18px;
+}
+
+.contact-section .contact-submit.primary-button {
+  width: 100%;
+  min-height: 53px;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(31, 31, 28, 0.55);
 }
 
 .captcha-placeholder {
@@ -1343,7 +1668,11 @@
 }
 
 .contact-image {
-  height: 260px;
+  width: 100%;
+  aspect-ratio: 856 / 572;
+  height: auto;
+  min-height: 260px;
+  border-radius: 0;
 }
 
 .footer-section {
@@ -1362,9 +1691,15 @@
 
 .footer-brand p,
 .footer-contact p,
-.footer-list li {
+.footer-list li,
+.footer-phones a {
   margin: 0;
   color: rgba(247, 244, 238, 0.95);
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(16px, 1.05vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .footer-brand p {
@@ -1404,10 +1739,12 @@
 .footer-contact h3,
 .footer-links-block h3 {
   margin: 0;
-  font-size: 11px;
-  font-family: inherit;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: clamp(14px, 1.15vw, 16px);
+  font-style: normal;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -1600,13 +1937,8 @@
   }
 
   .feature-card h3,
-  .membership-card h3,
   .section-title {
     font-size: 42px;
-  }
-
-  .membership-card h3 {
-    font-size: 28px;
   }
 
   .story-section {
@@ -1879,18 +2211,7 @@
   }
 
   .membership-section {
-    display: grid;
-    gap: 36px;
-  }
-
-  .membership-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-
-  .membership-card {
-    width: 400px;
-    height: 861px;
+    gap: 56px;
   }
 
   .gallery-stage {
@@ -1920,38 +2241,61 @@
 
   .faq-list {
     grid-template-columns: 1fr;
-    max-width: 1100px;
+    width: min(100%, 1476px);
     margin-inline: auto;
   }
 
   .contact-section {
-    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+    grid-template-columns: min(856px, 44.58%) minmax(0, 1fr);
+    grid-template-rows: auto auto;
     grid-template-areas:
-      'title image'
-      'intro image'
-      'form image';
-    column-gap: 40px;
+      'lead .'
+      'image form';
+    column-gap: clamp(40px, 4.7vw, 90px);
+    row-gap: clamp(46px, 5.5vw, 90px);
     align-items: start;
   }
 
+  .contact-lead {
+    grid-area: lead;
+    gap: 46px;
+  }
+
   .contact-section .section-title {
-    grid-area: title;
-    margin-bottom: 0;
+    font-size: 40px;
   }
 
   .contact-intro {
-    grid-area: intro;
-    max-width: 560px;
+    width: min(100%, 630px);
+    max-width: 630px;
   }
 
   .contact-form {
     grid-area: form;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 53px;
+    row-gap: 46px;
+    align-self: start;
+  }
+
+  .contact-field-message,
+  .contact-submit,
+  .captcha-placeholder {
+    grid-column: 1 / -1;
+  }
+
+  .contact-section .contact-submit.primary-button {
+    width: min(100%, 340px);
+    justify-self: end;
+    margin-top: 4px;
   }
 
   .contact-image {
     grid-area: image;
-    height: 100%;
-    min-height: 720px;
+    width: 100%;
+    max-width: 856px;
+    aspect-ratio: 856 / 572;
+    min-height: 0;
   }
 
   .footer-section {
@@ -1965,8 +2309,22 @@
     width: 232px;
   }
 
+  .footer-contact h3,
+  .footer-links-block h3 {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-brand p,
+  .footer-contact p,
+  .footer-list li,
+  .footer-phones a {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
   .footer-list li {
-    line-height: 1.42;
+    line-height: 1.45;
   }
 }
 
@@ -1996,9 +2354,6 @@
     padding-inline: 57px;
   }
 
-  .membership-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (min-width: 1400px) and (max-width: 1919px) {

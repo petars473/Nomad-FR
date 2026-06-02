@@ -33,6 +33,51 @@ function toBookingSlug(value: string): string {
   return encodeURIComponent(value.trim().toLowerCase().replace(/\s+/g, '-'))
 }
 
+type MembershipCardVariant = 'featured' | 'sand' | 'framed'
+
+function membershipCardClass(variant: MembershipCardVariant | undefined): string {
+  return `membership-card membership-card--${variant ?? 'sand'}`
+}
+
+const FaqPlusIcon = () => (
+  <svg className="faq-icon-svg" width="23" height="23" viewBox="0 0 23 23" fill="none" aria-hidden="true">
+    <path d="M11.5 0V23" stroke="currentColor" strokeWidth="2" />
+    <path d="M0 11.5H23" stroke="currentColor" strokeWidth="2" />
+  </svg>
+)
+
+const FaqMinusIcon = () => (
+  <svg className="faq-icon-svg" width="23" height="23" viewBox="0 0 23 23" fill="none" aria-hidden="true">
+    <path d="M0 11.5H23" stroke="currentColor" strokeWidth="2" />
+  </svg>
+)
+
+type FaqEntry = {
+  question: string
+  answer: string
+  answerLink?: {
+    before: string
+    label: string
+    after: string
+  }
+}
+
+function FaqAnswer({ faq }: { faq: FaqEntry }) {
+  if (faq.answerLink) {
+    return (
+      <p className="faq-answer">
+        {faq.answerLink.before}
+        <Link to="/booking" className="faq-answer-link">
+          {faq.answerLink.label}
+        </Link>
+        {faq.answerLink.after}
+      </p>
+    )
+  }
+
+  return <p className="faq-answer">{faq.answer}</p>
+}
+
 function App() {
   const [openFaq, setOpenFaq] = useState(0)
   const [immersivePanelIndex, setImmersivePanelIndex] = useState(0)
@@ -279,20 +324,22 @@ function App() {
           <div className="membership-list">
             {t.memberships.slice(0, 3).map((membership) => (
               <article
-                className={`membership-card${membership.featured ? ' featured' : ''}`}
+                className={membershipCardClass(
+                  (membership as { cardVariant?: MembershipCardVariant }).cardVariant,
+                )}
                 key={membership.title}
               >
                 <div className="membership-badge">
                   <MembershipIcon />
                 </div>
                 <p className="membership-eyebrow">{membership.eyebrow}</p>
-                <h3>{membership.title}</h3>
+                <h3 className="membership-card-title">{membership.title}</h3>
                 <p className="membership-price">
                   <span className="membership-strike">{membership.strike}</span>
-                  {membership.price}
+                  <span className="membership-price-value">{membership.price}</span>
                 </p>
                 <p className="membership-includes">{t.membershipIncludesLabel}</p>
-                <ul>
+                <ul className="membership-features">
                   {membership.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -308,42 +355,43 @@ function App() {
               </article>
             ))}
           </div>
+
+          {(() => {
+            const business = t.memberships[3]
+            return (
+              <div className="business-block">
+                <h2 className="section-title dark business-block-title">{t.businessSectionTitle}</h2>
+                <article className="business-card membership-card membership-card--business">
+                  <div className="business-card-badge">
+                    <MembershipIcon />
+                  </div>
+                  <header className="business-card-header">
+                    <p className="membership-eyebrow">{business.eyebrow}</p>
+                    <h3 className="business-card-title">{business.title}</h3>
+                    <p className="membership-price">
+                      <span className="membership-strike">{business.strike}</span>
+                      <span className="membership-price-value">{business.price}</span>
+                    </p>
+                  </header>
+                  <p className="membership-includes">{t.membershipIncludesLabel}</p>
+                  <ul className="business-items membership-features">
+                    {business.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <p className="membership-description business-desc">{business.description}</p>
+                  <Link
+                    className="package-button business-btn"
+                    to="/booking/$bookingPackage"
+                    params={{ bookingPackage: toBookingSlug(business.title) }}
+                  >
+                    {t.selectPackageBtn}
+                  </Link>
+                </article>
+              </div>
+            )
+          })()}
         </section>
-
-
-        {(() => {
-          const business = t.memberships[3]
-          return (
-            <section className="business-section section-cream">
-              <h2 className="section-title dark">{t.businessSectionTitle}</h2>
-              <article className="business-card">
-                <div className="business-card-badge">
-                  <MembershipIcon />
-                </div>
-                <p className="membership-eyebrow business-eyebrow">{business.eyebrow}</p>
-                <h3 className="business-card-title">{business.title}</h3>
-                <p className="membership-price business-price">
-                  <span className="membership-strike">{business.strike}</span>
-                  {business.price}
-                </p>
-                <p className="membership-includes">{t.membershipIncludesLabel}</p>
-                <ul className="business-items">
-                  {business.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <p className="membership-description business-desc">{business.description}</p>
-                <Link
-                  className="package-button business-btn"
-                  to="/booking/$bookingPackage"
-                  params={{ bookingPackage: toBookingSlug(business.title) }}
-                >
-                  {t.selectPackageBtn}
-                </Link>
-              </article>
-            </section>
-          )
-        })()}
 
         <section className="gallery-section section-olive" id="galerija">
           <h2 className="section-title gallery-title">{t.galleryTitle}</h2>
@@ -410,18 +458,27 @@ function App() {
           <div className="faq-list">
             {t.faqs.map((faq, index) => {
               const isOpen = openFaq === index
+              const entry = faq as FaqEntry
 
               return (
                 <article className={`faq-item${isOpen ? ' open' : ''}`} key={faq.question}>
                   <button
                     className="faq-trigger"
                     type="button"
+                    aria-expanded={isOpen}
                     onClick={() => setOpenFaq(isOpen ? -1 : index)}
                   >
-                    <span>{faq.question}</span>
-                    <span className="faq-symbol">{isOpen ? '-' : '+'}</span>
+                    <span className="faq-question">{entry.question}</span>
+                    <span className="faq-icon" aria-hidden="true">
+                      <FaqPlusIcon />
+                      <FaqMinusIcon />
+                    </span>
                   </button>
-                  {isOpen ? <p className="faq-answer">{faq.answer}</p> : null}
+                  <div className="faq-answer-wrap" aria-hidden={!isOpen}>
+                    <div className="faq-answer-panel">
+                      <FaqAnswer faq={entry} />
+                    </div>
+                  </div>
                 </article>
               )
             })}

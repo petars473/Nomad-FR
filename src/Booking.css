@@ -11,22 +11,28 @@
 
 .booking-title {
   margin: 0;
-  font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
-  font-size: clamp(34px, 4.5vw, 50px);
+  font-family: 'Marcellus', 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: 0.01em;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
 .booking-lead {
-  margin: 18px 0 0;
-  max-width: 1100px;
-  font-size: 15px;
-  line-height: 1.55;
+  margin: clamp(18px, 2.4vw, 28px) 0 0;
+  max-width: 630px;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: normal;
+  color: #1f1f1c;
 }
 
 .booking-lead-secondary {
-  margin-top: 8px;
+  margin-top: 18px;
 }
 
 .booking-membership-link {
@@ -60,9 +66,12 @@
   border-radius: 8px;
   background: #e9e4d8;
   color: #1f1f1c;
-  font: inherit;
-  font-size: 16px;
-  line-height: 1.4;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: normal;
 }
 
 .booking-field {
@@ -72,7 +81,7 @@
 
 .booking-field::placeholder,
 .booking-notes::placeholder {
-  color: #6f6f68;
+  color: rgba(31, 31, 28, 0.55);
 }
 
 .booking-field-phone {
@@ -130,31 +139,42 @@
   border: 0;
   border-radius: 8px;
   background: #717766;
-  color: #ffffff;
-  font-size: 16px;
+  color: #f7f4ee;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  line-height: normal;
+  letter-spacing: 0;
   text-transform: uppercase;
   cursor: pointer;
-  transition: filter 180ms ease;
+  transition: transform 180ms ease, background-color 180ms ease;
 }
 
 .booking-submit:hover {
-  filter: brightness(0.95);
+  background: #64695b;
+  transform: translateY(-1px);
 }
 
 .booking-payment-note {
   margin: 10px 0 0;
   width: min(100%, 446px);
   text-align: right;
-  font-size: 12px;
-  line-height: 1.5;
-  font-weight: 700;
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #1f1f1c;
 }
 
 @media (min-width: 900px) {
   .booking-page {
     padding: 70px 56px 92px;
+  }
+
+  .booking-title {
+    font-size: 40px;
   }
 
   .booking-grid-top,

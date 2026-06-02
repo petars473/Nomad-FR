@@ -128,11 +128,12 @@
         "Privatni parking",
         "Rad uz prirodu"
       ],
-      "featured": true
+      "cardVariant": "featured"
     },
     {
       "eyebrow": "Dnevni pristup",
       "title": "NOMAD DAY",
+      "cardVariant": "sand",
       "price": "32 KM / DAN",
       "strike": "40",
       "description": "Savršen izbor za povremeni rad ili upoznavanje prostora, dostupno u dnevnom terminu od 07:00 do 16:30.",
@@ -149,6 +150,7 @@
     {
       "eyebrow": "Timski pristup",
       "title": "NOMAD TEAM",
+      "cardVariant": "framed",
       "price": "40 KM / PO SATU",
       "strike": "50",
       "description": "Idealan izbor za sastanke, edukacije, prezentacije i timski rad, dostupno u večernjem terminu od 17:00 do 22:00.",
@@ -167,15 +169,16 @@
       "title": "NOMAD BUSINESS",
       "price": "320 KM / MJESEČNO",
       "strike": "400",
-      "description": "Idealno rješenje za firme kojima je potrebna registrovana poslovna adresa i osnovna poslovna infrastruktura.",
+      "description": "Idealno rješenje za firme kojima je potrebna registrovana poslovna adresa, organizacija pošte i osnovna poslovna infrastruktura, bez obaveze stalnog korištenja kancelarijskog prostora.",
       "items": [
-        "Poslovna adresa i sjedište firme",
-        "Poštansko sanduće i prijem pošte",
-        "Upravljanje poštom i obavještavanje",
-        "Istaknut naziv ili logo firme unutar prostora",
-        "Podrška za sastanke i administraciju",
-        "Profesionalna knjigovodstvena podrška"
-      ]
+        "Poslovnu adresu i sjedište firme za registraciju DOO društva",
+        "Poštansko sanduče i prijem poslovne pošte",
+        "Upravljanje poštom i obavještavanje o pristigloj dokumentaciji",
+        "Istaknut naziv ili logo firme unutar NOMAD prostora",
+        "Mogućnost korištenja konferencijskog stola za sastanke i prezentacije (po dogovoru)",
+        "Profesionalno knjigovodstvo i administrativna podrška"
+      ],
+      "cardVariant": "business"
     }
   ],
   "selectPackageBtn": "IZABERITE PAKET",
@@ -194,7 +197,12 @@
   "faqs": [
     {
       "question": "Da li je potrebna rezervacija?",
-      "answer": "Da. Rezervacija je obavezna za sve pakete i vrši se putem online forme na sajtu."
+      "answer": "Da. Rezervacija je obavezna za sve pakete i vrši se putem online forme na sajtu.",
+      "answerLink": {
+        "before": "Da. Rezervacija je obavezna za sve pakete i vrši se putem ",
+        "label": "online forme",
+        "after": " na sajtu."
+      }
     },
     {
       "question": "Koja je razlika između dnevnog i mjesečnog članstva?",
@@ -222,7 +230,12 @@
     }
   ],
   "contactSectionTitle": "JAVITE NAM SE",
-  "contactIntro": "Imate pitanje ili želite rezervisati radni prostor? Pošaljite nam poruku putem kontakt forme ili nas kontaktirajte direktno na +387 66 636 703 i +387 65 171 117.",
+  "contactIntro": {
+    "lead": "Imate pitanje ili želite rezervisati radni prostor?",
+    "body": "Pošaljite nam poruku putem kontakt forme ili nas kontaktirajte direktno na:",
+    "phones": ["+387 66 636 703", "+387 65 171 117"],
+    "phoneSeparator": "·"
+  },
   "contactForm": {
     "namePlaceholder": "Ime i prezime",
     "emailPlaceholder": "Email",

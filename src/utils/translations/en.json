@@ -128,11 +128,12 @@
         "Private parking",
         "A natural work setting with river views and the option to work outdoors"
       ],
-      "featured": true
+      "cardVariant": "featured"
     },
     {
       "eyebrow": "Daily access",
       "title": "NOMAD DAY",
+      "cardVariant": "sand",
       "price": "32 KM / DAY",
       "strike": "40",
       "description": "A perfect choice for occasional work or getting to know the space, available during daytime hours from 07:00 to 16:30.",
@@ -149,6 +150,7 @@
     {
       "eyebrow": "Team access",
       "title": "NOMAD TEAM",
+      "cardVariant": "framed",
       "price": "40 KM / HOUR",
       "strike": "50",
       "description": "An ideal choice for meetings, workshops, presentations, and team collaboration, available during evening hours from 17:00 to 22:00.",
@@ -175,7 +177,8 @@
         "Your company name or logo displayed within the NOMAD space",
         "Access to a conference table for meetings and presentations (upon request)",
         "Professional bookkeeping and administrative support"
-      ]
+      ],
+      "cardVariant": "business"
     }
   ],
   "selectPackageBtn": "CHOOSE A PACKAGE",
@@ -194,7 +197,12 @@
   "faqs": [
     {
       "question": "Is a reservation required?",
-      "answer": "Yes. A reservation is required for all packages and is made through the online form on the website."
+      "answer": "Yes. A reservation is required for all packages and is made through the online form on the website.",
+      "answerLink": {
+        "before": "Yes. A reservation is required for all packages and is made through the ",
+        "label": "online form",
+        "after": " on the website."
+      }
     },
     {
       "question": "What is the difference between daily access and monthly membership?",
@@ -222,7 +230,12 @@
     }
   ],
   "contactSectionTitle": "GET IN TOUCH",
-  "contactIntro": "Have a question or want to book a workspace?\n\nSend us a message through the contact form or reach out directly:\n\n+387 66 636 703 · +387 65 171 117",
+  "contactIntro": {
+    "lead": "Have a question or want to book a workspace?",
+    "body": "Send us a message through the contact form or reach out directly:",
+    "phones": ["+387 66 636 703", "+387 65 171 117"],
+    "phoneSeparator": "·"
+  },
   "contactForm": {
     "namePlaceholder": "Full name",
     "emailPlaceholder": "Email",
