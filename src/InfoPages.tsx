@@ -46,14 +46,14 @@ export function HouseRulesPage() {
   return (
     <PageShell>
       <h1 className="info-page-title">{page.title}</h1>
-      <div className="info-page-body">
-        <p>{page.intro}</p>
-        <ul className="info-page-list">
+      <div className="info-page-body info-page-house-rules">
+        <p className="info-page-house-rules-intro">{page.intro}</p>
+        <ul className="info-page-list info-page-house-rules-list">
           {page.items.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p>{page.closing}</p>
+        <p className="info-page-house-rules-closing">{page.closing}</p>
       </div>
     </PageShell>
   )

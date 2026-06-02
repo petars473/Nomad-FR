@@ -1,0 +1,54 @@
+.booking-confirm-page {
+  background: #f7f4ee;
+  color: #1f1f1c;
+  padding: 80px 20px 100px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.booking-confirm-shell {
+  width: min(100%, 860px);
+  margin: 0 auto;
+}
+
+.booking-confirm-title {
+  margin: 0;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(34px, 4.5vw, 50px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+}
+
+.booking-confirm-body {
+  margin-top: 28px;
+  max-width: 620px;
+}
+
+.booking-confirm-body p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.booking-confirm-body p + p {
+  margin-top: 12px;
+}
+
+.booking-confirm-btn {
+  display: inline-block;
+  margin-top: 44px;
+  padding: 14px 36px;
+  background: #1f1f1c;
+  color: #f7f4ee;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.booking-confirm-btn:hover {
+  background: #3a3a35;
+}

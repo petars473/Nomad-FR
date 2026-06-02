@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { useTranslations } from './utils/translations'
 import { useLanguage } from './context/useLanguage.ts'
+import { ContactSection } from './components/ContactSection'
 import {
-  contactImage,
   featureIcons,
   galleryImage,
   galleryImage2,
@@ -428,24 +428,7 @@ function App() {
           </div>
         </section>
 
-        <section className="contact-section section-cream" id="kontakt">
-          <h2 className="section-title dark">{t.contactSectionTitle}</h2>
-          <p className="contact-intro">{t.contactIntro}</p>
-
-          <form className="contact-form">
-            <input type="text" placeholder={t.contactForm.namePlaceholder} />
-            <input type="email" placeholder={t.contactForm.emailPlaceholder} />
-            <input type="tel" placeholder={t.contactForm.phonePlaceholder} />
-            <input type="text" placeholder={t.contactForm.subjectPlaceholder} />
-            <textarea placeholder={t.contactForm.messagePlaceholder} rows={6} />
-            {/* <div className="captcha-placeholder">{t.contactForm.captchaPlaceholder}</div> */}
-            <button className="primary-button full-width" type="submit">
-              {t.contactForm.submitBtn}
-            </button>
-          </form>
-
-          <img className="contact-image" src={contactImage} alt={t.contactImageAlt} />
-        </section>
+        <ContactSection />
     </main>
   )
 }

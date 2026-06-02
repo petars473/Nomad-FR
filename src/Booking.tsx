@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useParams } from '@tanstack/react-router'
+import { useForm, type FieldErrors } from 'react-hook-form'
+import { useNavigate, useParams } from '@tanstack/react-router'
 import { toast } from 'sonner'
 import { useLanguage } from './context/useLanguage.ts'
 import { useTranslations } from './utils/translations'
@@ -14,6 +14,24 @@ type BookingFormValues = {
   package: string
   date: string
   notes: string
+}
+
+const ReservationPackage = {
+  NomadDay: 1,
+  NomadTeam: 2,
+  NomadMember: 3,
+  NomadBusiness: 4,
+  NeedRecommendation: 5,
+} as const
+
+type ReservationPackage = (typeof ReservationPackage)[keyof typeof ReservationPackage]
+
+type CreateInquiryRequest = {
+  Package: ReservationPackage
+  FullName: string
+  Email: string
+  PhoneNumber: string
+  Notes?: string
 }
 
 // const CAPTCHA_IMAGE = '/assets/figma/captcha.png'
@@ -37,11 +55,31 @@ function resolvePackageFromUrl(bookingPackage: string | undefined, options: stri
   return decodeURIComponent(bookingPackage).replace(/[-_]+/g, ' ').trim()
 }
 
+function toReservationPackage(value: string): ReservationPackage {
+  const slug = toPackageSlug(value)
+
+  if (slug === 'nomad-day') {
+    return ReservationPackage.NomadDay
+  }
+  if (slug === 'nomad-team') {
+    return ReservationPackage.NomadTeam
+  }
+  if (slug === 'nomad-member') {
+    return ReservationPackage.NomadMember
+  }
+  if (slug === 'nomad-business') {
+    return ReservationPackage.NomadBusiness
+  }
+
+  return ReservationPackage.NeedRecommendation
+}
+
 function Booking() {
   const { language } = useLanguage()
   const t = useTranslations(language)
   const { bookingPackage } = useParams({ strict: false })
   const { apiCall } = useApi()
+  const navigate = useNavigate()
   const selectedFromUrl = useMemo(
     () => resolvePackageFromUrl(bookingPackage, t.memberships.map((membership) => membership.title)),
     [bookingPackage, t.memberships],
@@ -62,18 +100,24 @@ function Booking() {
     defaultValues: { package: defaultPackage },
   })
   const [selectedPackage, setSelectedPackage] = useState(defaultPackage)
-  const isDay = selectedPackage.toLowerCase().includes('day')
+  const isNomadDay = selectedPackage.trim().toLowerCase() === 'nomad day'
 
   async function onSubmit(data: BookingFormValues) {
+    const payload: CreateInquiryRequest = {
+      Package: toReservationPackage(data.package),
+      FullName: data.name,
+      Email: data.email,
+      PhoneNumber: data.phone,
+      Notes: data.notes?.trim() || undefined,
+    }
+
     try {
       const response = await apiCall('api/reservations/inquiries', {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
-      console.log('Booking response:', response)
       if (response.ok) {
-        toast.success(t.booking.messages.submitSuccess)
-        console.log('Booking submitted:', data)
+        await navigate({ to: '/booking/confirmation' })
       } else {
         toast.error(t.booking.messages.submitFailed)
       }
@@ -83,8 +127,12 @@ function Booking() {
     }
   }
 
-  function onInvalidSubmit() {
-    toast.error(t.booking.messages.phoneRequired)
+  function onInvalidSubmit(errors: FieldErrors<BookingFormValues>) {
+    if (errors.date) {
+      toast.error(t.booking.messages.dateRequired)
+    } else if (errors.phone) {
+      toast.error(t.booking.messages.phoneRequired)
+    }
   }
 
   return (
@@ -117,10 +165,10 @@ function Booking() {
               className="booking-field booking-select"
               {...register('package')}
               onChange={(e) => {
+                setValue('package', e.target.value)
                 setSelectedPackage(e.target.value)
                 setValue('date', '')
               }}
-              defaultValue={defaultPackage}
             >
               <option value="" disabled>
                 {t.booking.packagePlaceholder}
@@ -131,8 +179,13 @@ function Booking() {
                 </option>
               ))}
             </select>
-            {isDay && (
-              <input type="date" placeholder={t.booking.datePlaceholder} className="booking-field" {...register('date')} />
+            {isNomadDay && (
+              <input
+                type="date"
+                placeholder={t.booking.datePlaceholder}
+                className="booking-field booking-field-date"
+                {...register('date', { required: isNomadDay })}
+              />
             )}
           </div>
 

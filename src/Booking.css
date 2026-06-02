@@ -79,6 +79,10 @@
   border-color: #cd7373;
 }
 
+.booking-field-date {
+  border-color: #cd7373;
+}
+
 .booking-field:focus,
 .booking-notes:focus {
   outline: none;
